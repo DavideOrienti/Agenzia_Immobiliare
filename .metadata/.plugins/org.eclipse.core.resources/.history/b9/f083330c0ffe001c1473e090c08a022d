@@ -1,0 +1,44 @@
+package it.uniroma3.siw.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Entity
+public class Agente {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id ;
+	
+	@NotBlank
+	@Column(nullable = false)
+	private String nome;
+	
+	@NotBlank
+	@Column(nullable = false)
+	private String cognome;
+	
+	@NotNull
+	@Min(18)
+	@Max(100)
+	private int eta;
+	
+	@NotNull
+	@Min(10)
+	@Max(15)
+	private String numeroTelefonico;
+	
+	@ManyToOne
+	private AgenziaImmobiliare agenzia;
+	
+	
+
+}
