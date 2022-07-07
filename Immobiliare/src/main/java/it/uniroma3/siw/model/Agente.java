@@ -38,7 +38,7 @@ public class Agente {
 	@NotNull
 	@Min(10)
 	@Max(15)
-	private String numeroTelefonico;
+	private String numeroTelefono;
 	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private AgenziaImmobiliare agenzia;
@@ -82,12 +82,12 @@ public class Agente {
 		this.eta = eta;
 	}
 
-	public String getNumeroTelefonico() {
-		return numeroTelefonico;
+	public String getNumeroTelefono() {
+		return numeroTelefono;
 	}
 
-	public void setNumeroTelefonico(String numeroTelefonico) {
-		this.numeroTelefonico = numeroTelefonico;
+	public void setNumeroTelefono(String numeroTelefonico) {
+		this.numeroTelefono = numeroTelefonico;
 	}
 
 	public AgenziaImmobiliare getAgenzia() {
