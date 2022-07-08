@@ -1,7 +1,5 @@
 package it.uniroma3.siw.model;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
@@ -28,6 +25,9 @@ public class Immobile {
 	@Column(nullable = false)
 	//@Min(1)
 	private int civico;
+	
+	@Column(nullable = false)
+	private int  interno;
 	
 	
 	//servirà per vedere quando è ancora prenotabile
@@ -93,6 +93,22 @@ public class Immobile {
 
 	public void setNumeroPostiDisponibili(int numeroPostiDisponibili) {
 		this.numeroPostiDisponibili = numeroPostiDisponibili;
+	}
+
+	public int getInterno() {
+		return interno;
+	}
+
+	public void setInterno(int interno) {
+		this.interno = interno;
+	}
+
+	public AgenziaImmobiliare getAgenzia() {
+		return agenzia;
+	}
+
+	public void setAgenzia(AgenziaImmobiliare agenzia) {
+		this.agenzia = agenzia;
 	}
 
 //	public List<Ticket> getPrenotazioni() {

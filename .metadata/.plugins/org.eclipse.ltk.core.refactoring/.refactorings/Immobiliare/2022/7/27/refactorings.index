@@ -6,3 +6,14 @@
 1657207028838	Copy package
 1657207091875	Rename package 'com.example.demo'
 1657207938690	Rename package 'it.uniroma3.siw.model.utility'
+1657279999793	Delete element
+1657280026620	Rename type 'CredentialService'
+1657280391108	Delete element
+1657280456394	Delete element
+1657286454846	Delete element
+1657286517788	Rename compilation unit 'CredentialController.java'
+1657291119427	Delete element
+1657291921704	Rename resource 'Immobile.html'
+1657291964301	Rename resource 'Immobile.css'
+1657292195352	Move 'index.css' to 'css'
+1657292423190	Move 'agenti.html' to 'templates'

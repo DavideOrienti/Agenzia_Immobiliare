@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link th:href="@{/css/my-style.css}" rel="stylesheet" />
+<link th:href="@{/css/agenti.css}" rel="stylesheet" />
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+<title>agenti</title>
+</head>
+<body>
+    <header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="titolo">
+		<h1>Questi sono i nostri Agenti :</h1>
+	</div>
+	
+		
+		
+			<div class="elenco">
+			<div class="agenti">
+		
+			<div th:each="agenti : ${agenti}">				
+			<div class="punto">
+			
+			
+			<div class="nome">
+			<a href="agente.html"
+			th:href= "@{'/agente' + '/' + ${agente.id}}" th:text="|${agente.nome} |">>nome	agente</a>
+			</div>
+			</div>
+			
+			</div>       
+	  </div>
+	 </div>
+			
+		<!--  	<li class="punto"
+				th:each="chef : ${chefs}"><a href="chef.html"
+					th:href="@{'/chef' + '/' + ${chef.id}}" th:text="|${chef.nome} |">Buffetefefef
+				</a></li>
+				
+				
+			</div> -->
+		
+	
+	<div th:if="${credentials}">
+        <div class="Aggiungi">
+		  <h5>
+            <a href="agenteForm">Aggiungi Agente</a>
+            </h5>
+            </div>
+
+           </div>
+	
+	 <footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

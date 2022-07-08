@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <head th:fragment="headerfiles(title)">
+
+  <link th:href="@{/css/my-style.css}" rel="stylesheet" />
+    <link th:href="@{/css/immobile.css}" rel="stylesheet" />
+
+<title th:text="${title}">Immobile</title>
+</head>
+<body>
+
+<header th:replace="fragments/base.html :: intestazione"></header>
+	<div>
+	
+	
+		
+		
+		
+		 <div class="immobile">
+			<h1 th:text="${immobile.descrizione}">immobile</h1>
+			</div>
+			<div class="indirizzo">
+			<div class="text"><h2>Indirizzo :</h2> </div>
+			<div class="nomeChef">
+			<h2 th:if= "${immobile.indirizzo}" th:text="${immobile.civico}" th:text="${immobile.interno}">via cilicia 7</h2>
+			</div></div>
+			
+			<div class="descrizione">
+			Descrizione:    <span th:text="${immobile.descrizione}">strada molto trafficata</span>
+			</div>
+			
+			
+			
+		
+		
+		
+		
+		
+		
+	</div>
+	  <footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

@@ -3,11 +3,15 @@ package it.uniroma3.siw.validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.model.Immobile;
+import it.uniroma3.siw.model.Utente;
+import it.uniroma3.siw.service.UtenteService;
 
+@Component
 public class UtenteValidator implements Validator {
 
 	 @Autowired
@@ -23,7 +27,7 @@ public class UtenteValidator implements Validator {
 	public void validate(Object obj, Errors errors) {
 		if (!errors.hasErrors()) {
 			 logger.debug("confermato: valori non nulli");
-		 if(utenteService.alreadyExist((Immobile)obj)) {
+		 if(utenteService.alreadyExist((Utente)obj)) {
 			 logger.debug("e' un duplicato");
 	            errors.reject("Immobile.duplicato");
 	        }
