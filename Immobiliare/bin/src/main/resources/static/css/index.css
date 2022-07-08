@@ -1,0 +1,215 @@
+
+.titolo {
+	width: 100%;
+	text-align: center;
+	margin-top: 4%;
+	font-size: 50px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	color: white;
+}
+
+
+
+
+/*--------Sezione Scritte------*/
+
+.cards{
+	margin-top:30px;
+}
+.section_card {
+	background: url(/images/Antipasti.jpg) no-repeat left;
+	background-color: #fdfdfd;
+	background-size: 50%;
+	overflow: hidden;
+  padding: 100px;
+  font-size: 13px;
+}
+.section_card2 {
+ background: url(/images/secondi.jpg) no-repeat right;
+  background-size: 50%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 100px;
+  
+  font-size: 13px;
+}
+.section_card3 {
+	background: url(/images/dolci.jpg) no-repeat left;
+	background-color: #fdfdfd;
+	background-size: 50%;
+	overflow: hidden;
+  padding: 100px;
+  font-size: 13px;
+}
+
+.section_card a {
+  color: black;
+  font-style: oblique;
+}
+.section_card2 a {
+  color: black;
+  font-style: oblique;
+}
+.section_card a:hover {
+  color: orangered;
+}
+.section_card2 a:hover {
+  color: orangered;
+}
+.inner-container {
+  width: 55%;
+  float: right;
+  background-color: #fdfdfd;
+
+  padding-left: 150px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.inner-container h1 {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.inner-container2 {
+  width: 55%;
+  float: left;
+  background-color: white;
+
+  padding-right: 150px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.inner-container2 h1 {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 1200px) {
+  .inner-container {
+    padding: 80px;
+  }
+  .box {
+    margin: 50px;
+  }
+
+  .cornice {
+    height: max-content;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .section_card {
+      background-size: 100%;
+      padding-left: 200px;
+    }
+    .inner-container {
+      width: 100%;
+    }
+
+    .section_card2 {
+      background-size: 100%;
+      padding-right: 200px;
+    }
+    .inner-container2 {
+      width: 100%;
+      padding-left: 20px;
+    }
+    .box_conteiner {
+      padding: 60px;
+    }
+    .box {
+      margin: 50px;
+    }
+    .cornice {
+      height: max-content;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section_card {
+    padding: 0;
+    padding-left: 200px;
+  }
+  .inner-container {
+    padding: 60px;
+  }
+  .section_card2 {
+    padding: 0;
+    padding-right: 200px;
+  }
+  .inner-container2 {
+    padding: 60px;
+  }
+}
+
+
+
+
+.scritte{
+	margin-top: 20%;
+	}
+
+
+
+.buffet {
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+    no-repeat left/cover url(/images/Listafilm.jpg);
+	text-align: center;
+	width:30%;
+	border-radius:30px;
+	box-shadow:red;
+	height: 250px;
+	margin-top: 5%;
+	font-size: 30px;
+}
+
+.titoloContenitore {
+	width: 95%;
+}
+
+
+/*-----Bottone-----*/
+
+.select {
+  display: flex;
+  height: 70%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top : 50px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+
+  width: 35%;
+  height: 350px;
+  display: inline-block;
+  align-items: center;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px;
+  background-image: url(/images/grey.png);
+  background-position: center;
+  background-size: cover;
+
+  transition: trasform 0.5s;
+}
+
+.card:hover {
+  transform: translate(10px);
+}
+
+.nome {
+	font-size: 25px;
+   display:flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}

@@ -1,0 +1,15 @@
+body {
+ margin :0;
+ position :static;
+ 
+ color:white;
+ 	
+}
+
+.descrizione{
+	margin-top :80px;
+		display: flex;
+	margin-left: 50px;
+
+	}
+	
