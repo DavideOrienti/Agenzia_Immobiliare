@@ -23,27 +23,27 @@ public class Agente {
 	private Long id ;
 	
 	@NotBlank
-	@Column(nullable = false)
+//	@Column(nullable = false)
 	private String nome;
 	
 	@NotBlank
-	@Column(nullable = false)
+//	@Column(nullable = false)
 	private String cognome;
 
 	@NotNull
-	@Min(18)
-	@Max(100)
+	//@Min(18)
+	//@Max(100)
 	private int eta;
 	
-	@NotNull
-	@Min(10)
-	@Max(15)
+     @NotNull
+	//@Min(10)
+	//@Max(15)
 	private String numeroTelefono;
 	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private AgenziaImmobiliare agenzia;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "agente")
 	private List<Ticket> prenotazioni;
 	
 	

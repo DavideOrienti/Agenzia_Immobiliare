@@ -26,7 +26,7 @@ public class Immobile {
 	@Column(nullable = false)
 	private String indirizzo;
 	@Column(nullable = false)
-	@Min(1)
+	//@Min(1)
 	private int civico;
 	
 	
@@ -39,8 +39,8 @@ public class Immobile {
 	
 	
 	
-	@OneToMany
-	private List<Ticket> prenotazioni;
+//	@OneToMany
+//	private List<Ticket> prenotazioni;
 	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private AgenziaImmobiliare agenzia;
@@ -95,13 +95,13 @@ public class Immobile {
 		this.numeroPostiDisponibili = numeroPostiDisponibili;
 	}
 
-	public List<Ticket> getPrenotazioni() {
-		return prenotazioni;
-	}
-
-	public void setPrenotazioni(List<Ticket> prenotazioni) {
-		this.prenotazioni = prenotazioni;
-	}
+//	public List<Ticket> getPrenotazioni() {
+//		return prenotazioni;
+//	}
+//
+//	public void setPrenotazioni(List<Ticket> prenotazioni) {
+//		this.prenotazioni = prenotazioni;
+//	}
 	
 	
 

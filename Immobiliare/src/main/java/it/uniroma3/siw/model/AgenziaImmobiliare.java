@@ -24,7 +24,7 @@ public class AgenziaImmobiliare {
 	private Long id ;
 	
 	@NotBlank
-	@Column(nullable = false)
+	//@Column(nullable = false)
 	private String nome;
 	
 	private String descrizione;
@@ -32,22 +32,22 @@ public class AgenziaImmobiliare {
 	@Column(nullable = false)
 	private String indirizzo;
 	@Column(nullable = false)
-	@Min(1)
+	//@Min(1)
 	private int civico;
 	
 	@NotNull
-	@Min(10)
-	@Max(15)
+	//@Min(10)
+	//@Max(15)
 	private String numeroTelefonico;
 	
 	
 	
 	
 	
-	@OneToMany(mappedBy="agenzia",cascade = {CascadeType.REMOVE})
+	@OneToMany(mappedBy = "agenzia",cascade = {CascadeType.REMOVE})
 	private List<Agente> agenti;
 	
-	@OneToMany(mappedBy="agenzia",cascade = {CascadeType.REMOVE})
+	@OneToMany(mappedBy = "agenzia",cascade = {CascadeType.REMOVE})
 	private List<Immobile> immobili;
 	
 	

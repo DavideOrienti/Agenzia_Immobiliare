@@ -20,7 +20,7 @@ public class Ticket {
 	private Long id ;
 	
 	@NotNull
-	@Min(0)
+	//@Min(0)
 	private int Progressivo;
 	
 	@NotBlank

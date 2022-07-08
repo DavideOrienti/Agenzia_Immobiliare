@@ -30,16 +30,16 @@ public class Utente {
 	private String cognome;
 	
 	@NotNull
-	@Min(18)
-	@Max(100)
+	//@Min(18)
+	//@Max(100)
 	private int eta;
 	
 	@NotNull
-	@Min(10)
-	@Max(15)
+	//@Min(10)
+	//@Max(15)
 	private String numeroTelefonico;
 	
-	@OneToMany(mappedBy = "utente", cascade = CascadeType.REMOVE)
+	@OneToMany (mappedBy = "utente", cascade = CascadeType.REMOVE)
 	private List<Ticket> prenotazioni;
 
 	public Long getId() {
