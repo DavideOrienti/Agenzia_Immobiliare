@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles(title)">
+
+<link th:href="@{/css/my-style.css}" rel="stylesheet" />
+<link th:href="@{/css/agente.css}" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+<title th:text="${title}">Buffet</title>
+</head>
+<body>
+
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div>
+
+
+
+
+		<div>
+			
+			<h1 th:text="${agente.nome}">Paolo</h1>
+			<h1 th:text="${agente.cognome}">Rossi</h1>
+			<h2 th:text="${agente.eta}">Rossi</h2>
+
+		</div>
+
+
+
+
+	</div>
+
+	<!--  >div th:if="${credentials}">
+		<form th:action="@{'/modifica'+'/' + ${agente.id}}" method="GET">
+			<button class="sub-button" type="submit">
+				<h1>MODIFICA</h1>
+			</button>
+		</form>
+	</div-->
+	
+	<!-- >div>
+            <form th:if="${credentials.role == 'ADMIN'}" th:action="@{'/admin/modificaChef' + '/' + ${chef.id}}"
+                method="GET">
+                <button class="sub-button" type="submit" th:text="#{modifica.chef}"  style="margin-left:44%;"></button>
+            </form>
+        </div-->
+
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>
