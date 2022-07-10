@@ -18,22 +18,20 @@ public class Ticket {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id ;
 	
-	@NotNull
-	private String nome;
 	
-	@NotNull
+	
+	
 	//@Min(0)
 	private int Progressivo;
 	
-	@NotBlank
 	private LocalDate dataPrenotazione;
 	
 	
 	
 	
-	
-	@ManyToOne(cascade = CascadeType.PERSIST)
-	private Agente agente;
+//	
+//	@ManyToOne(cascade = CascadeType.PERSIST)
+//	private Agente agente;
 	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Immobile immobile;
@@ -53,13 +51,7 @@ public class Ticket {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
-	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 
 	public int getProgressivo() {
 		return Progressivo;
@@ -77,13 +69,13 @@ public class Ticket {
 		this.dataPrenotazione = dataPrenotazione;
 	}
 
-	public Agente getAgente() {
-		return agente;
-	}
-
-	public void setAgente(Agente agente) {
-		this.agente = agente;
-	}
+//	public Agente getAgente() {
+//		return agente;
+//	}
+//
+//	public void setAgente(Agente agente) {
+//		this.agente = agente;
+//	}
 
 	public Immobile getImmobile() {
 		return immobile;

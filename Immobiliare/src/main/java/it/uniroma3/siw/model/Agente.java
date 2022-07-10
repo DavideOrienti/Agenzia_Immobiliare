@@ -37,7 +37,7 @@ public class Agente {
 	//@Max(15)
 	private String numeroTelefono;
      
-     @NotNull
+    
      @OneToMany(mappedBy="agente")
      private List<Immobile> immobili;
 	
@@ -45,8 +45,8 @@ public class Agente {
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private AgenziaImmobiliare agenzia;
 	
-	@OneToMany(mappedBy = "agente")
-	private List<Ticket> prenotazioni;
+//	@OneToMany(mappedBy = "agente")
+//	private List<Ticket> prenotazioni;
 	
 	
 	
@@ -100,13 +100,13 @@ public class Agente {
 		this.agenzia = agenzia;
 	}
 
-	public List<Ticket> getPrenotazioni() {
-		return prenotazioni;
-	}
-
-	public void setPrenotazioni(List<Ticket> prenotazioni) {
-		this.prenotazioni = prenotazioni;
-	}
+//	public List<Ticket> getPrenotazioni() {
+//		return prenotazioni;
+//	}
+//
+//	public void setPrenotazioni(List<Ticket> prenotazioni) {
+//		this.prenotazioni = prenotazioni;
+//	}
 	public List<Immobile> getImmobili() {
 		return immobili;
 	}

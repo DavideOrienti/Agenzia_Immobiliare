@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link th:href="@{/css/my-style.css}" rel="stylesheet" />
+<link th:href="@{/css/buffetForm.css}" rel="stylesheet" />
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+<title>Prenota Form</title>
+</head>
+<body>
+
+	<header th:replace="fragments/base.html :: intestazione"></header>
+
+	<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2>PrenotaForm</h2>
+
+				<form th:action="@{/conferma}" method="POST" th:object="${ticket}">
+
+
+					<div th:text="${immobile.indirizzo}">
+					
+					
+				 </div>
+					
+				<!--  	<div th:text="${immobile.agente.nome}">	
+					</div>
+					
+					<label>Orario Proiezione <input type="datetime-local"
+					name="data e ora" th:field="*{dataPrenotazione}" required /> <span
+					th:if="${#fields.hasErrors('dataPrenotazione')}" th:errors="*{dataPrenotazione}"></span>
+				</label>
+					
+				-->
+					
+
+		
+
+
+
+					<div>
+						<button type="submit" class="btn">Prenota </button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

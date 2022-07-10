@@ -3,41 +3,48 @@
 <head>
 
 <link th:href="@{/css/my-style.css}" rel="stylesheet" />
-<link th:href="@{/css/agenti.css}" rel="stylesheet" />
+<link th:href="@{/css/chefs.css}" rel="stylesheet" />
 <link
       rel="stylesheet"
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
-<title>agenti</title>
+<title>Chefs</title>
 </head>
 <body>
     <header th:replace="fragments/base.html :: intestazione"></header>
 	<div class="titolo">
-		<h1>Questi sono i nostri Agenti :</h1>
+		<h1>Questi sono i nostri Immobili</h1>
 	</div>
 	
 		
 		
 			<div class="elenco">
-			<div class="agenti">
+			<div class="immobili">
 		
-	<div class="elenco">
-				<li><a class= "punto" th:each="agente : ${agenti}" href="agente.html"
-					th:href="@{'/agente' + '/' + ${agente.id}}" th:text="|${agente.nome} |">Buffetefefef
-				</a></li>
-			</div>     
+			<div th:each="immobile : ${immobili}">				
+			<div class="punto">
+		<!--  	<img th:src="${immobili.immagine}" height="300" width="auto"> -->
+			
+			
+			<div class="nome">
+			<a href="immobile.html"
+			th:href= "@{'/immobile' + '/' + ${immobile.id}}" th:text="|${immobile.indirizzo} ${immobile.civico} |" >></a>
+			</div>
+			</div>
+			
+			</div>       
 	  </div>
 	 </div>
-			
-				<form th:if="${credentials.role == 'ADMIN'}" th:action="@{'/admin/agenteForm'}"
+	 
+	 <div>
+			<form th:if="${credentials.role == 'ADMIN'}" th:action="@{'/admin/immobileForm'}"
 				method="GET">
 				<button class="sub-button"  style="margin-top:40px;margin-left:45%" type="submit">Bottone</button>
 			</form>
-		
-	
+		</div>
 
-	
+		
 	 <footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

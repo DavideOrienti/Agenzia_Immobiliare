@@ -2,6 +2,7 @@ package it.uniroma3.siw.authentication;
 
 
 import static it.uniroma3.siw.model.Credentials.ADMIN_ROLE;
+import static it.uniroma3.siw.model.Credentials.DEFAULT_ROLE;
 
 import javax.sql.DataSource;
 
@@ -80,12 +81,14 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
         //chi puo accedere a cosa
         .authorizeRequests()
         // chiunque puo accedere alle pagine index, login, register, ai css e alle immagini
-        .antMatchers(HttpMethod.GET, "/", "/index", "/login", "/register", "/css/**", "/images/**").permitAll()
+        .antMatchers(HttpMethod.GET,  "/login", "/register", "/css/**", "/images/**").permitAll()
         // chiunque puo effettuare il login e registrarsi
         .antMatchers(HttpMethod.POST, "/login", "/register").permitAll()
         // utenti ADMIN possono accedere a risorse con path /admin/
         .antMatchers(HttpMethod.GET, "/admin/**").hasAnyAuthority(ADMIN_ROLE)
         .antMatchers(HttpMethod.POST, "/admin/**").hasAnyAuthority(ADMIN_ROLE)
+//        .antMatchers(HttpMethod.GET, "/index").hasAnyAuthority(DEFAULT_ROLE)
+//        .antMatchers(HttpMethod.POST, "/index").hasAnyAuthority(DEFAULT_ROLE)
         // utenti autenticati possono accedere alle pagine rimanenti 
         .anyRequest().authenticated()
 
@@ -103,7 +106,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
         .logoutUrl("/logout")
 
         // in caso di successo, si viene reindirizzati alla /index page
-        .logoutSuccessUrl("/index")
+        .logoutSuccessUrl("/login")
 
         .invalidateHttpSession(true)
         .clearAuthentication(true).permitAll();

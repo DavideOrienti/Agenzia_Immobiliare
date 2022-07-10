@@ -50,7 +50,7 @@ public class AuthenticationController {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
 		model.addAttribute("credentials", credentials);
-		return "home";
+		return "index";
 	}
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
@@ -83,7 +83,7 @@ public class AuthenticationController {
 			credentialsService.saveCredentials(credentials);
 			return "registrationSuccessful";
 		}
-		return "registerUser";
+		return "loginForm";
 	}
 }
 //@Controller

@@ -22,37 +22,21 @@
 			<div class="elenco">
 			<div class="agenti">
 		
-			<div th:each="agenti : ${agenti}">				
-			<div class="punto">
-			
-			
-			<div class="nome">
-			<a href="agente.html"
-			th:href= "@{'/agente' + '/' + ${agente.id}}" th:text="|${agente.nome} |">>nome	agente</a>
-			</div>
-			</div>
-			
-			</div>       
+	<div class="elenco">
+				<li><a class= "punto" th:each="agente : ${agenti}" href="agente.html"
+					th:href="@{'/agente' + '/' + ${agente.id}}" th:text="|${agente.nome} |">Buffetefefef
+				</a></li>
+			</div>     
 	  </div>
 	 </div>
 			
-		<!--  	<li class="punto"
-				th:each="chef : ${chefs}"><a href="chef.html"
-					th:href="@{'/chef' + '/' + ${chef.id}}" th:text="|${chef.nome} |">Buffetefefef
-				</a></li>
-				
-				
-			</div> -->
+				<form th:if="${credentials.role == 'ADMIN'}" th:action="@{'/admin/agenteForm'}"
+				method="GET">
+				<button class="sub-button"  style="margin-top:40px;margin-left:45%" type="submit">Bottone</button>
+			</form>
 		
 	
-	<div th:if="${credentials}">
-        <div class="Aggiungi">
-		  <h5>
-            <a href="agenteForm">Aggiungi Agente</a>
-            </h5>
-            </div>
 
-           </div>
 	
 	 <footer th:replace="fragments/base.html :: footer"></footer>
 </body>

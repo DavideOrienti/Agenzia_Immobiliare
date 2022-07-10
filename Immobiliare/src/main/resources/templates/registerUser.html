@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- <head th:replace="fragments/base.html :: headerfiles(title='Registra Utente')"> </head> -->
+<link th:href="@{/css/my-style.css}" rel="stylesheet" />
+<link th:href="@{/css/register.css}" rel="stylesheet" />
+ <link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
+ <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+ <title>Register</title>
+<body>
+	
+	<div>
+    	<!-- <h4 th:text="#{header.registra}">Registrazione</h4>-->
+    	<div class="center">
+		<h1>Register</h1>
+	<form th:action="@{/register}" method="POST">
+	
+    <div>
+    
+    
+    
+        <div class="txt_field">
+            <span>Username</span>
+            
+            
+            <span><input type="text" placeholder="username" required
+                       th:field="${credentials.username}"/></span>
+            <span th:if="${#fields.hasErrors('credentials.username')}"
+                th:errors="${credentials.username}" th:style="'color:red'"></span>
+        </div>
+        <div class="txt_field">
+            <span>Password</span>
+            <span><input type="password" placeholder="password" required
+                       th:field="${credentials.password}"/></span>
+            <span th:if="${#fields.hasErrors('credentials.password')}"
+                th:errors="${credentials.password}" th:style="'color:red'"></span>
+        </div>
+        <div class="txt_field">
+            <span>Nome</span>
+            <span><input type="text" placeholder="nome" required
+                       th:field="${user.nome}"/></span>
+            <span th:if="${#fields.hasErrors('user.nome')}"
+                th:errors="${user.nome}" th:style="'color:red'"></span>
+        </div>
+        <div class="txt_field">
+            <span>Cognome</span>
+            <span><input type="text" placeholder="cognome" required
+                       th:field="${user.cognome}"/></span>
+            <span th:if="${#fields.hasErrors('user.cognome')}"
+                th:errors="${user.cognome}" th:style="'color:red'"></span>
+        </div>
+         <div class="txt_field">
+            <span>N Telefono</span>
+            <span><input type="text" placeholder="numeroTelefonico" required
+                       th:field="${user.numeroTelefonico}"/></span>
+            <span th:if="${#fields.hasErrors('user.numeroTelefonico')}"
+                th:errors="${user.numeroTelefonico}" th:style="'color:red'"></span>
+        </div>
+         <div class="txt_field">
+            <span>Eta</span>
+            <span><input type="text" placeholder="eta" required
+                       th:field="${user.eta}"/></span>
+            <span th:if="${#fields.hasErrors('user.eta')}"
+                th:errors="${user.eta}" th:style="'color:red'"></span>
+        </div>
+        
+        <div>
+           <span><input type="submit" value="Register"/></span>
+            
+            <div class="signup_link">
+                 <a th:href="login">Login</a>
+            </div>
+        </div>
+    </div>
+	</form>
+	</div>
+	<div class="spazio"> 
+	</div>
+    <footer th:replace="fragments/base.html :: footer(home='/')"></footer>
+   
+</body>
+</html>
+
