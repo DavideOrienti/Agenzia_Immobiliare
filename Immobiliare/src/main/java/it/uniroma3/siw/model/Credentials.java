@@ -13,7 +13,6 @@ public class Credentials {
 	
 	public static final String DEFAULT_ROLE = "DEFAULT";
 	public static final String ADMIN_ROLE = "ADMIN";
-	public static final String LOGGATO_ROLE="LOGGATO";
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

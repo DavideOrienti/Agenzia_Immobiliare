@@ -5,6 +5,8 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,7 +15,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import it.uniroma3.siw.model.Agente;
+import it.uniroma3.siw.model.Credentials;
 import it.uniroma3.siw.model.Immobile;
+import it.uniroma3.siw.model.Ticket;
 import it.uniroma3.siw.service.ImmobileService;
 import it.uniroma3.siw.validator.ImmobileValidator;
 
@@ -31,87 +36,70 @@ public class ImmobileController {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
+	Immobile immobileCorrente;
+	
 
 
 	
-@PostMapping("/immobile")
-	
+
+	@PostMapping("/admin/immobile")
+
 	//bilding result gestische i casi di errore
 	//model Attriubute associa cio che c edentro al modello con l oggetto persona
-		public String addImmobile(@Valid @ModelAttribute("immobile")Immobile immobile,BindingResult br,Model model) {
+	public String addImmobile(@Valid @ModelAttribute("immobili")Immobile immobile,BindingResult br,Model model) {
 		iv.validate(immobile, br); /* "aggiunge il caso di errore a br quindi nel if oltre a controllare i classici 
 		                              errori contro anche che non ci siano duplicati*/
-		model.addAttribute("login",AuthenticationController.loggato);
 		if(!br.hasErrors())	{
 			is.saveImmobile(immobile);
-			//model.addAttribute("immobile", model);
-			this.is.saveImmobile(immobile);
-			model.addAttribute("immobile", this.is.FindAll());
-			
-			if(AuthenticationController.loggato) {
-				if(AuthenticationController.admin) {
-					model.addAttribute("credentials",AuthenticationController.admin);
-				}}
-			return "immobile.html";  // se il problema non ha trovato errori torna alla pagina iniziale
+			//model.addAttribute("chef", model);
+			model.addAttribute("agenti", this.is.FindAll());
+
+
+			return "agenti.html";  // se il problema non ha trovato errori torna alla pagina iniziale
 		}
-		
-		 return "immobileForm.html";
-		
+		model.addAttribute("agente", new Agente());
+
+		return "agenteForm.html";
 	}
-
-//richiede tute le persone perche non specifico id
-//	@GetMapping("/chef")
-//	public String getChef(Model model) {
-//		List<Chef> chef = cs.FindAll();
-//		model.addAttribute("chef",chef);
-//		return "chefs.html";	
-//	}
-
-@GetMapping("/immobile")
-public String getImmobili(Model model) {
-	model.addAttribute("login",AuthenticationController.loggato);
-	model.addAttribute("immobili", this.is.FindAll());
-	if(AuthenticationController.loggato) {
-		if(AuthenticationController.admin) {	
-			model.addAttribute("credentials",AuthenticationController.admin);
-			
-		}}
-		return "immobili.html";
 	
-}
-	
-	// una get che mi riporta l'immobile in base all'id
-	@GetMapping("/immobile/{id}")
-	  public String getImmobile(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("login",AuthenticationController.loggato);
-		model.addAttribute("immobile", this.is.FindById(id));
-		if(AuthenticationController.loggato) {
-	 		if(AuthenticationController.admin) {	
-	 			model.addAttribute("credentials",AuthenticationController.admin);
-	 			
-	 		}}
 
-	       
-	    return "immobile.html";
-
-}
-	
-	@GetMapping("/immobileForm")
+	@GetMapping("/admin/immobileForm")
 	public String immobileForm(Model model) {
 		model.addAttribute("immobile", new Immobile());
-		model.addAttribute("login",AuthenticationController.loggato);
 		return "immobileForm.html";
+	}
+
+
+	@GetMapping("/immobile")
+	public String getImmobile(Model model) {
+		model.addAttribute("immobili", this.is.FindAll());
+		
+		return "immobile.html";
+
+	}
+
+
+	@GetMapping("/immobile/{id}")
+	public String getImmobile(@PathVariable("id") Long id, Model model) {
+		this.immobileCorrente = this.is.FindById(id);
+		model.addAttribute("immobile",immobileCorrente);
+		//per il tasto modifica per dare la visibilità 
+		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Credentials credentials = this.is.getCredentialsService().getCredentials(userDetails.getUsername());
+        model.addAttribute("credentials", credentials);
+		return "immobile.html";
+
 	}
 	
-	@GetMapping("/addImmobile")
-	public String addImmobile(Model model) {
-		//logger.debug("addCuratore");
-		model.addAttribute("immobile", new Immobile());
+	@GetMapping("/prenotaForm")
+	public String prenota(Model model) {
+		model.addAttribute("ticket", new Ticket());
+		model.addAttribute("immobile",this.immobileCorrente);
+		model.addAttribute("agente",this.immobileCorrente.getAgente());
 		
-		
-		//model.addAttribute("login",AuthenticationController.loggato);
-		return "immobileForm.html";
+		return "conferma.html";
 	}
+	
 	
 //	
 //	@GetMapping("/modifica/{id}")

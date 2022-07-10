@@ -16,6 +16,9 @@ public class ImmobileService {
 	@Autowired  // autocarichi
 	private ImmobileRepository ir;
 	
+	@Autowired
+    CredentialsService credentialsService;
+	
 //	@Autowired
 //	private ChefService cs;
 	
@@ -25,8 +28,6 @@ public class ImmobileService {
 	@Transactional // ci pensa Springboot ad apreire e chiude la transazione
 	public void saveImmobile (Immobile immobile) {
 		ir.save(immobile);		
-		
-		
 	}
 	
 	@Transactional
@@ -66,6 +67,10 @@ public class ImmobileService {
 	public void rimuovi(Immobile immobile) {
 		ir.delete(immobile);
 	}
+	
+	public CredentialsService getCredentialsService() {
+		return credentialsService;
+    }
 	
 	
 }

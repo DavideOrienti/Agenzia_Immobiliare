@@ -29,6 +29,10 @@ public class Immobile {
 	@Column(nullable = false)
 	private int  interno;
 	
+	@ManyToOne
+	@NotNull
+	private Agente agente;
+	
 	
 	//servirà per vedere quando è ancora prenotabile
 	private boolean stato;
@@ -109,6 +113,14 @@ public class Immobile {
 
 	public void setAgenzia(AgenziaImmobiliare agenzia) {
 		this.agenzia = agenzia;
+	}
+
+	public Agente getAgente() {
+		return agente;
+	}
+
+	public void setAgente(Agente agente) {
+		this.agente = agente;
 	}
 
 //	public List<Ticket> getPrenotazioni() {

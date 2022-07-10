@@ -1,6 +1,6 @@
 package it.uniroma3.siw.controller;
 
-import javax.validation.Valid;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,9 +11,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.uniroma3.siw.model.Immobile;
 import it.uniroma3.siw.model.Ticket;
+import it.uniroma3.siw.model.Utente;
+import it.uniroma3.siw.service.AgenteService;
+import it.uniroma3.siw.service.ImmobileService;
 import it.uniroma3.siw.service.TicketService;
 import it.uniroma3.siw.validator.TicketValidator;
 
@@ -28,90 +33,118 @@ public class TicketController {
 	private TicketService ts;
 	@Autowired
 	private TicketValidator tv;
+	
+	@Autowired
+	private ImmobileService is;
+	
+	@Autowired
+	private AgenteService as;
 
 	//quando non mi arriva nulla oppure caso base vado in index pagina iniziale
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
-
-
-	@PostMapping("/ticket")
-
-	//bilding result gestische i casi di errore
-	//model Attriubute associa cio che c edentro al modello con l oggetto persona
-	public String addTicket(@Valid @ModelAttribute("ticket")Ticket ticket,BindingResult br,Model model) {
-		tv.validate(ticket, br); /* "aggiunge il caso di errore a br quindi nel if oltre a controllare i classici 
-		                              errori contro anche che non ci siano duplicati*/
-		model.addAttribute("login",AuthenticationController.loggato);
-		if(!br.hasErrors())	{
-			ts.saveTicket(ticket);
-			//model.addAttribute("chef", model);immobile
-			model.addAttribute("ticket", this.ts.FindAll());
-
-			if(AuthenticationController.loggato) {
-				if(AuthenticationController.admin) {
-					model.addAttribute("credentials",AuthenticationController.admin);
-				}}
-			return "ticket.html";  // se il problema non ha trovato errori torna alla pagina iniziale
-		}
-
-		return "ticketForm.html";
-
-	}
 	
-	@GetMapping("/addTicket")
-	public String addTicket(Model model) {
-		//logger.debug("addCuratore");
+	private Immobile immobileCorrente;
+	
+	
+//	
+//	@GetMapping("/Conferma")
+//    public String paginaConferma(@PathVariable("id") Long id,Model model, Immobile immobile) {
+////        logger.debug("addBiglietto");
+//		this.immobileCorrente=this.ts.getImmobileService().immobilePerId(id);
+//
+//        model.addAttribute("immobile",immobile.getId());
+//        model.addAttribute("agente",immobile.getAgente()); 
+//        model.addAttribute("ticket", new Ticket());
+//
+//        return "paginaConferma.html";
+//    }
+//
+
+ @RequestMapping(value="/conferma", method = RequestMethod.POST)
+ public String newBiglietto( Model model,@ModelAttribute("biglietto") Ticket biglietto, BindingResult bindingResult,HttpSession httpSession) {
+     this.tv.validate(biglietto, bindingResult);
+
+     if (!bindingResult.hasErrors()) {
+         biglietto.setImmobile((Immobile)httpSession.getAttribute("immobile"));
+         biglietto.setUtente((Utente)httpSession.getAttribute("utente"));
+         Utente utente=(Utente)httpSession.getAttribute("utente");
+         
+            ts.saveTicket(biglietto);
+            return "tickets.html";
+             }
+     	this.immobileCorrente=(Immobile)httpSession.getAttribute("immobile");
 		model.addAttribute("ticket", new Ticket());
+		model.addAttribute("immobile",immobileCorrente);
+		model.addAttribute("agente",this.immobileCorrente.getAgente());
+
+        return "prenotaForm.html";
+    }
 
 
-		//model.addAttribute("login",AuthenticationController.loggato);
-		return "ticketForm.html";
-	}
 
-	//richiede tute le persone perche non specifico id
-	//	@GetMapping("/chef")
-	//	public String getChef(Model model) {
-	//		List<Chef> chef = cs.FindAll();
-	//		model.addAttribute("chef",chef);
-	//		return "chefs.html";	
-	//	}
-
-	@GetMapping("/ticket")
-	public String getTickets(Model model) {
-		model.addAttribute("login",AuthenticationController.loggato);
-		model.addAttribute("tickets", this.ts.FindAll());
-		if(AuthenticationController.loggato) {
-			if(AuthenticationController.admin) {	
-				model.addAttribute("credentials",AuthenticationController.admin);
-
-			}}
-		return "tickets.html";
-
-	}
+//	@PostMapping("/ticket")
+//
+//	//bilding result gestische i casi di errore
+//	//model Attriubute associa cio che c edentro al modello con l oggetto persona
+//	public String addTicket(@Valid @ModelAttribute("tickets")Ticket ticket,BindingResult br,Model model) {
+//		
+//		//qui dovrei fare il login prima di fare un ticket
+////		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+////        Credentials credentials = this.as.getCredentialsService().getCredentials(userDetails.getUsername());
+////        if(credentials.getRole(.equals()))
+//        
+//		
+//		tv.validate(ticket, br); /* "aggiunge il caso di errore a br quindi nel if oltre a controllare i classici 
+//		                              errori contro anche che non ci siano duplicati*/
+//		if(!br.hasErrors())	{
+//			ts.saveTicket(ticket);
+//			//model.addAttribute("chef", model);
+//			model.addAttribute("tickets", this.ts.FindAll());
+//
+//
+//			return "tickets.html";  // se il problema non ha trovato errori torna alla pagina iniziale
+//		}
+//		model.addAttribute("ticket", new Ticket());
+//
+//		return "ticketForm.html";
+//	}
+//	
+//	@GetMapping("/addTicket")
+//	public String addTicket(Model model, Immobile immobile) {
+//		//logger.debug("addCuratore");
+//		model.addAttribute("ticket", new Ticket());
+//		model.addAttribute("immobile",immobile);
+//		model.addAttribute("agenti",as.FindAll());
+//
+//
+//		//model.addAttribute("login",AuthenticationController.loggato);
+//		return "ticketForm.html";
+//	}
+//	
+//	@GetMapping("/tidcketForm")
+//	public String TicketForm(Model model) {
+//		model.addAttribute("ticket", new Ticket());
+//		return "ticketForm.html";
+//
+//	}
+	
+//
+//	@GetMapping("/ticket")
+//	public String getTickets(Model model) {
+//		
+//		return "tickets.html";
+//
+//	}
 
 
 	@GetMapping("/ticket/{id}")
 	public String getTicket(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("login",AuthenticationController.loggato);
 		model.addAttribute("ticket", this.ts.FindById(id));
-		if(AuthenticationController.loggato) {
-			if(AuthenticationController.admin) {	
-				model.addAttribute("credentials",AuthenticationController.admin);
-
-			}}
-
-
 		return "ticket.html";
 
 	}
-	@GetMapping("/tidcketForm")
-	public String TicketForm(Model model) {
-		model.addAttribute("ticket", new Ticket());
-		model.addAttribute("login",AuthenticationController.loggato);
-		return "ticketForm.html";
 
-	}
 	
 	//da fare anche il get prenotazioni considerando l'immobile 
 	//il get immobile 

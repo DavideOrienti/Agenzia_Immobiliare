@@ -15,7 +15,10 @@ import it.uniroma3.siw.repository.AgenteRepository;
 public class AgenteService {
 	
 	@Autowired  // autocarichi
-	private AgenteRepository ar;
+	private AgenteRepository ar; 
+	
+	@Autowired
+    private CredentialsService credentialsService;
 	
 //	@Autowired
 //	private ChefService cs;
@@ -67,6 +70,10 @@ public class AgenteService {
 	public void rimuovi(Agente agente) {
 		ar.delete(agente);
 	}
+	
+	public CredentialsService getCredentialsService() {
+		return credentialsService;
+    }
 	
 	
 }

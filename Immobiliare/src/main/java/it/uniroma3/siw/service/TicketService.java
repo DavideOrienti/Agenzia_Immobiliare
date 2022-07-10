@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.model.Ticket;
+import it.uniroma3.siw.model.Utente;
 import it.uniroma3.siw.repository.TicketRepository;
 
 @Service
@@ -28,6 +29,11 @@ public class TicketService {
 		tr.save(ticket);		
 		
 		
+	}
+	
+	@Transactional
+	public List<Ticket> FindByUtente(Utente u) {
+		return tr.findByUtente(u);
 	}
 	
 	@Transactional
@@ -69,6 +75,7 @@ public class TicketService {
 	public void rimuovi(Ticket ticket) {
 		tr.delete(ticket);
 	}
+	
 	
 	
 }
