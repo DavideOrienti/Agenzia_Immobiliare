@@ -17,6 +17,8 @@ public class UtenteService {
 	@Autowired  // autocarichi
 	private UtenteRepository ur;
 	
+	@Autowired
+	private CredentialsService cs;
 //	@Autowired
 //	private ChefService cs;
 	
@@ -67,6 +69,10 @@ public class UtenteService {
 	public void rimuovi(Utente utente) {
 		ur.delete(utente);
 	}
+	
+	public CredentialsService getCredentialsService() {
+		return this.cs;
+    }
 	
 	
 }
