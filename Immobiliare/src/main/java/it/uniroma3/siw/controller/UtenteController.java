@@ -15,10 +15,7 @@ import it.uniroma3.siw.service.TicketService;
 import it.uniroma3.siw.service.UtenteService;
 import it.uniroma3.siw.validator.UtenteValidator;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> Matteo
 @Controller
 public class UtenteController {
 	
