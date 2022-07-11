@@ -42,7 +42,7 @@ body {
   width: 100%;
   height: 70px;
   display: flex;
-  background-color: #101010;
+ background-color: transparent;
 }
 .header_logo {
   width: 10%;
@@ -75,7 +75,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+
 }
 .home_text a {
   padding-left: 10px;
@@ -90,7 +90,7 @@ a:hover {
 
 
 footer{
-	margin-top :40%;
+
   padding: 70px 0;
   max-width: 100%;
   padding-left: 10%;

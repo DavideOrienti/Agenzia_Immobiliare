@@ -12,30 +12,45 @@
 <title>agenti</title>
 </head>
 <body>
+
+
+
+<div class="banner">
     <header th:replace="fragments/base.html :: intestazione"></header>
 	<div class="titolo">
-		<h1>Questi sono i nostri Agenti :</h1>
+		<h1>I nostri Agenti </h1>
 	</div>
 	
-		
-		
-			<div class="elenco">
-			<div class="agenti">
-		
-	<div class="elenco">
-				<li><a class= "punto" th:each="agente : ${agenti}" href="agente.html"
-					th:href="@{'/agente' + '/' + ${agente.id}}" th:text="|${agente.nome} |">Buffetefefef
-				</a></li>
-			</div>     
-	  </div>
-	 </div>
+	<div class="carte">
+	<div class="rigaCarte">
+	<div th:each="agente : ${agenti}">
+	<div class="card">
+  <div class="card-image">
+  <p> <!--  	<img th:src="${immobili.immagine}" height="300" width="auto"> --></p>
+  </div>
+  <div class="card-text">
+    <div class="nome">
+			<a  href="agente.html"
+					th:href="@{'/agente' + '/' + ${agente.id}}" th:text="|${agente.nome} |" >></a>
+			</div>
+    <h2>VIA IMMOBILE</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt eligendi dolor</p>
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+
+
+
 			
 				<form th:if="${credentials.role == 'ADMIN'}" th:action="@{'/admin/agenteForm'}"
 				method="GET">
 				<button class="sub-button"  style="margin-top:40px;margin-left:45%" type="submit">Bottone</button>
 			</form>
 		
-	
+	</div>
 
 	
 	 <footer th:replace="fragments/base.html :: footer"></footer>

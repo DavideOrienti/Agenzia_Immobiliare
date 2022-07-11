@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="headerfiles(title)">
-
+<link th:href="@{/css/my-style.css}" rel="stylesheet" />
+<link th:href="@{/css/utente.css}" rel="stylesheet" />
 
 <link rel="stylesheet" type="text/css"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
-<title th:text="${title}">Buffet</title>
+<title th:text="${title}">Utente</title>
 </head>
 <body>
-
+<div class="banner">
 	<header th:replace="fragments/base.html :: intestazione"></header>
-	<div>
+	<div class="blocco">
+	
+	
 
 
-
-
-		<div>
+		<div class="sinistro">
 			
 			<h1 th:text="${utente.nome}">Paolo</h1>
 			<h1 th:text="${utente.cognome}">Paolo</h1>
@@ -24,14 +25,14 @@
 			
 		<div class="elenco">
 				<a class= "punto" th:each="ticket : ${tickets}" href="ticket.html"
-					th:href="@{'/ticket' + '/' + ${ticket.id}}" th:text="|${ticket.immobile.nome}${ticket.Progressivo} |">Buffetefefef
+					th:href="@{'/ticket' + '/' + ${ticket.id}}" th:text="|${ticket.immobile.indirizzo}${ticket.Progressivo} |">Buffetefefef
 				</a>
 			</div> 
 
 		</div>
 
 
-	</div>
+	</div></div>
 
 
 	<footer th:replace="fragments/base.html :: footer"></footer>

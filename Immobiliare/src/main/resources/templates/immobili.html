@@ -3,7 +3,7 @@
 <head>
 
 <link th:href="@{/css/my-style.css}" rel="stylesheet" />
-<link th:href="@{/css/chefs.css}" rel="stylesheet" />
+<link th:href="@{/css/immobili.css}" rel="stylesheet" />
 <link
       rel="stylesheet"
       type="text/css"
@@ -12,30 +12,40 @@
 <title>Chefs</title>
 </head>
 <body>
+
+<div class="banner">
     <header th:replace="fragments/base.html :: intestazione"></header>
 	<div class="titolo">
 		<h1>Questi sono i nostri Immobili</h1>
 	</div>
 	
-		
-		
-			<div class="elenco">
-			<div class="immobili">
-		
-			<div th:each="immobile : ${immobili}">				
-			<div class="punto">
-		<!--  	<img th:src="${immobili.immagine}" height="300" width="auto"> -->
-			
-			
-			<div class="nome">
+	<div class="carte">
+	<div class="rigaCarte">
+	<div th:each="immobile : ${immobili}">
+	<div class="card">
+  <div class="card-image">
+  <p> <!--  	<img th:src="${immobili.immagine}" height="300" width="auto"> --></p>
+  </div>
+  <div class="card-text">
+    <div class="nome">
 			<a href="immobile.html"
 			th:href= "@{'/immobile' + '/' + ${immobile.id}}" th:text="|${immobile.indirizzo} ${immobile.civico} |" >></a>
 			</div>
-			</div>
-			
-			</div>       
-	  </div>
-	 </div>
+    <h2>VIA IMMOBILE</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt eligendi dolor</p>
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+	
+	
+	
+	
+		
+		
+
 	 
 	 <div>
 			<form th:if="${credentials.role == 'ADMIN'}" th:action="@{'/admin/immobileForm'}"
@@ -44,7 +54,7 @@
 			</form>
 		</div>
 
-		
+		</div>
 	 <footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>
