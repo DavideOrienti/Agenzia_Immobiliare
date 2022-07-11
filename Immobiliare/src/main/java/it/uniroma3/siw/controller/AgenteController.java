@@ -50,6 +50,10 @@ public class AgenteController {
 			model.addAttribute("agenti", this.as.FindAll());
 			model.addAttribute("agente",agente);
 
+			UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			Credentials credentials = as.getCredentialsService().getCredentials(userDetails.getUsername());
+			model.addAttribute("credentials", credentials);
+			
 
 			return "agenti.html";  // se il problema non ha trovato errori torna alla pagina iniziale
 		}

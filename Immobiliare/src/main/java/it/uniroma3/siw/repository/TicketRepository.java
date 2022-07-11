@@ -16,6 +16,7 @@ public interface TicketRepository extends CrudRepository<Ticket,Long> {
 	//prima immobile era di tipo object , vedere se da qualche problema
 	public List<Ticket> findByUtenteAndImmobile(Utente utente, Immobile immobile);
 	public List<Ticket> findByUtente(Utente utente);
+	
 
 
 

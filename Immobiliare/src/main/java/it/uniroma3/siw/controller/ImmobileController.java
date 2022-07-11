@@ -105,6 +105,7 @@ public class ImmobileController {
 	@GetMapping("/immobile/{id}")
 	public String getImmobile(@PathVariable("id") Long id, Model model) {
 		this.immobileCorrente = this.is.FindById(id);
+		
 		model.addAttribute("immobile",immobileCorrente);
 		//per il tasto modifica per dare la visibilità 
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -121,7 +122,7 @@ public class ImmobileController {
 		model.addAttribute("ticket", new Ticket());
 		model.addAttribute("immobile",this.immobileCorrente);
 		model.addAttribute("agente",this.immobileCorrente.getAgente());
-		
+		is.setImmobileCorrente(this.immobileCorrente);
 		return "prenotaForm.html";
 	}
 	

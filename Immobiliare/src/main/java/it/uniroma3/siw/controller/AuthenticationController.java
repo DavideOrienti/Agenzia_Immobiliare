@@ -29,6 +29,8 @@ public class AuthenticationController {
 
 	@Autowired
 	private CredentialsValidator credentialsValidator;
+	
+	
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET) 
 	public String showRegisterForm (Model model) {
@@ -50,6 +52,8 @@ public class AuthenticationController {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
 		model.addAttribute("credentials", credentials);
+		model.addAttribute("utente",credentials.getUser());
+		
 		return "index";
 	}
 
