@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -45,3 +46,52 @@
    
 </body>
 </html>
+=======
+<!DOCTYPE html> 
+<html xmlns:th="http://www.thymeleaf.org"> 
+ 
+<link th:href="@{/css/my-style.css}" rel="stylesheet" /> 
+<link th:href="@{/css/loginForm.css}" rel="stylesheet" /> 
+<link 
+      rel="stylesheet" 
+      type="text/css" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    /> 
+ 
+ <link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet"> 
+ <title>Login/Register</title> 
+<body> 
+  
+  
+  
+  <div class="center"> 
+  <h1>Login</h1> 
+  
+ <form th:action="@{/login}" method="POST"> 
+  <div> 
+    <div class="txt_field"> 
+    <span>Username:</span> 
+    <span><input name="username" type="text" required /></span> 
+   </div>   
+    <div class="txt_field"> 
+    <span>Password:</span> 
+    <span><input name="password" type="password" required /></span> 
+   </div> 
+   <div> 
+    <span><input type="submit" value="Login"/></span> 
+   </div> 
+    
+   <div class="signup_link"> 
+            <a th:href="register">Registrati</a> 
+           </div> 
+    
+  </div> 
+   
+  <div class="spazio"> 
+  </div> 
+ </form> 
+ </div> 
+    
+</body> 
+</html>
+>>>>>>> Matteo

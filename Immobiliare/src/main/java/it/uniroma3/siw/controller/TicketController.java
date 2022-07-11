@@ -1,5 +1,8 @@
 package it.uniroma3.siw.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -13,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,7 +25,6 @@ import it.uniroma3.siw.model.Immobile;
 import it.uniroma3.siw.model.Ticket;
 import it.uniroma3.siw.model.Utente;
 import it.uniroma3.siw.service.AgenteService;
-import it.uniroma3.siw.service.CredentialsService;
 import it.uniroma3.siw.service.ImmobileService;
 import it.uniroma3.siw.service.TicketService;
 import it.uniroma3.siw.validator.TicketValidator;
@@ -133,6 +136,31 @@ public class TicketController {
 	
 		        return "prenotaForm.html";
 		    }
+	
+	@PostMapping("/remove/{id}")
+    public String removePiatto(Model model, @PathVariable("id")Long idTicket) {
+
+            Ticket t= ts.FindById(idTicket);
+
+//            List<Ingredienti> ingredientiP = new ArrayList<>( p.getIngredienti());
+//
+//            for(Ingredienti i: ingredientiP) {
+//
+//                p.removeIngrediente(i);
+//                i.removePiatto(p);
+//            }
+            Utente u = t.getUtente();
+            //ho l'utente devo vedere se così facendo sul DB resta in memoria il ticket
+            
+            //devo capire se così facendo tolgo anche dall'utente il ticket
+            ts.rimuovi(t);
+            model.addAttribute("utente", u);
+
+
+            
+            return "utente.html";
+    }
+	
 
 
 //	@PostMapping("/ticket")
@@ -197,45 +225,5 @@ public class TicketController {
 
 	}
 
-	
-	//da fare anche il get prenotazioni considerando l'immobile 
-	//il get immobile 
-	// il get agente per poter vedere quale agente andrà a quell'appuntamento
-
-//
-//	@GetMapping("/modifica/{id}")
-//	public String modificaChef(Model model,@PathVariable("id") Long id) {
-//		Chef c= cs.FindById(id);
-//		model.addAttribute("chef", c);
-//		if(AuthenticationController.loggato) {
-//			if(AuthenticationController.admin) {	
-//				model.addAttribute("credentials",AuthenticationController.admin);
-//
-//			}}
-//
-//
-//		return "ModificaChef.html";
-//	}
-//
-//	@PostMapping("/chef/{id}")
-//	public String modificaChef(@ModelAttribute("chef") Chef chef, Model model,BindingResult bindingResult,
-//			@PathVariable("id") Long Id) {
-//
-//		//Chef c = cs.FindById(Id);
-//		chef.setId(Id);
-//		cs.salvaChef(chef);
-//		//cs.cancellaChef(c);
-//
-//		//chef.setId(Id);
-//		chef=cs.FindById(Id);
-//		model.addAttribute("chef", chef);
-//		if(AuthenticationController.loggato) {
-//			if(AuthenticationController.admin) {	
-//				model.addAttribute("credentials",AuthenticationController.admin);
-//
-//			}}
-//
-//		return "chef.html";
-//	}
 
 }

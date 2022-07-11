@@ -37,6 +37,7 @@ public class Utente {
 	//@Max(15)
 	private String numeroTelefonico;
 	
+	
 	@OneToMany (mappedBy = "utente", cascade = CascadeType.REMOVE)
 	private List<Ticket> prenotazioni;
 	

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link th:href="@{/css/my-style.css}" rel="stylesheet" />
+<link th:href="@{/css/ImmobileForm.css}" rel="stylesheet" />
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+<title>ModificaImmobile</title>
+</head>
+<body>
+
+<header th:replace="fragments/base.html :: intestazione"></header>
+
+<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2>ModificaImmobile</h2>
+
+<!--  	<form th:action="@{/chef/{id}}"-->
+	<form th:action="@{'/immobile/' + ${immobile.id}}"
+	method="POST" th:object="${immobile}">
+
+		<div th:if="${#fields.hasGlobalErrors()}">
+		 <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore</p>
+		</div>
+
+
+		<div>
+			indirizzo:<input type="text" class="field" th:field="*{indirizzo}" />
+			<div th:if="${#fields.hasErrors('indirizzo')}" th:errors="*{indirizzo}"></div>
+			
+		</div>
+		
+		<div>
+			civico<input type="text" class="field"th:field="*{civico}" />
+			<div th:if="${#fields.hasErrors('civico')}" th:errors="*{civico}"></div>
+			
+		</div>
+		
+		
+		<div>
+			interno:<input type="text" class="field" th:field="*{interno}" />
+			<div th:if="${#fields.hasErrors('interno')}" th:errors="*{interno}"></div>
+		</div>
+			<div>
+			Descrizione:<input type="text" class="field" th:field="*{descrizione}" />
+			<div th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></div>
+		</div>
+			
+			<div>
+						<select name="agente" roleId="agente" id="agente" th:field="*{agente}"
+							class="field">
+							
+							<option value="">Agente</option>
+							
+							<option th:each="agente : ${agenti}" th:value="${agente.id}"
+								th:text="${agente.nome}" >
+								
+								</option>
+								
+
+						</select>
+						<p th:if="${#fields.hasErrors('agente')}" th:errors="*{agente}">Name Error</p>
+					
+					</div>
+		
+		
+		<!-- >div>
+					Immagine <input type="text" class="field" name="immagine" th:field="*{immagine}" required />
+					<span th:if="${#fields.hasErrors('immagine')}" th:errors="*{immagine}"></span>
+				</div-->
+				
+		<div>
+			<button type="submit" class="btn"> Conferma </button></div>
+
+	</form>
+			</div>
+		</div>
+		</div>
+	
+		<footer th:replace="fragments/base.html :: footer"></footer>
+	</body>
+	</html>

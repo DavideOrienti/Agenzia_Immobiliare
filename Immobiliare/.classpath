@@ -29,9 +29,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/39366/.m2/repository/org/springframework/security/spring-security-config/5.5.0/spring-security-config-5.5.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/39366/.m2/repository/org/springframework/security/spring-security-core/5.5.0/spring-security-core-5.5.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/39366/.m2/repository/org/springframework/security/spring-security-crypto/5.5.0/spring-security-crypto-5.5.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/39366/.m2/repository/org/springframework/security/spring-security-web/5.5.0/spring-security-web-5.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pizzi/.m2/repository/org/springframework/security/spring-security-config/5.7.1/spring-security-config-5.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pizzi/.m2/repository/org/springframework/security/spring-security-core/5.7.1/spring-security-core-5.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pizzi/.m2/repository/org/springframework/security/spring-security-crypto/5.7.1/spring-security-crypto-5.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pizzi/.m2/repository/org/springframework/security/spring-security-web/5.7.1/spring-security-web-5.7.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

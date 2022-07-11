@@ -19,7 +19,7 @@
 
 
 		<div>
-			
+
 			<h1 th:text="${agente.nome}">Paolo</h1>
 			<h1 th:text="${agente.cognome}">Rossi</h1>
 			<h2 th:text="${agente.eta}">Rossi</h2>
@@ -32,20 +32,15 @@
 
 	</div>
 
-	<!--  >div th:if="${credentials}">
-		<form th:action="@{'/modifica'+'/' + ${agente.id}}" method="GET">
+	<div th:if="${credentials.role == 'ADMIN'}">
+		<form th:action="@{'/modificaAgente'+'/' + ${agente.id}}" method="GET">
 			<button class="sub-button" type="submit">
 				<h1>MODIFICA</h1>
 			</button>
 		</form>
-	</div-->
-	
-	<!-- >div>
-            <form th:if="${credentials.role == 'ADMIN'}" th:action="@{'/admin/modificaChef' + '/' + ${chef.id}}"
-                method="GET">
-                <button class="sub-button" type="submit" th:text="#{modifica.chef}"  style="margin-left:44%;"></button>
-            </form>
-        </div-->
+	</div>
+
+
 
 	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>

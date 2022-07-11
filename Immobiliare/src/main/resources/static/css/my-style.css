@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 body {
@@ -95,53 +96,152 @@ footer{
   max-width: 100%;
   padding-left: 10%;
   background-color: #24262b;
+=======
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"); 
+ 
+body { 
+  line-height: 1.5; 
+  font-family: Poppins; 
+ 
+   
+} 
+ 
+ 
+ 
+.foto{ 
+ height:600px; 
+ display:flex; 
+ align-items:center; 
+ width:100%; 
+  margin: 0;  
+  position: static; 
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), 
+    no-repeat left/cover url(/images/buffet.jpg); 
+    background-size: cover; 
+} 
+ 
+.Nome{ 
+ display: flex; 
+ margin-top:-300px; 
+ margin-left: 40px; 
+ color:white; 
+ font-size: 30px; 
+} 
+ 
+   
+   
+ 
+ 
+* { 
+  margin: 0; 
+  padding: 0; 
+   
+} 
+.header { 
+  width: 100%; 
+  height: 70px; 
+  display: flex; 
+ background-color: transparent; 
+} 
+.header_logo { 
+  width: 10%; 
+  color: white; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+} 
+ 
+.header_logo a{ 
+ color: white; 
+ margin: 10px; 
+} 
+.header_items { 
+  width: 90%; 
+>>>>>>> Matteo
   
-}
-
-
-
-.footer_colonne {
-  display: flex;
-  flex-wrap: wrap;
-  
-}
-
-colonna ul {
-  list-style: none;
-}
-
-.colonna h4 {
-  font-size: 20px;
-  text-transform: capitalize;
-  margin-bottom: 35px;
-  font-weight: 500;
-  position: relative;
-}
-.colonna {
-  width: 25%;
-
-  color: white;
-}
-.colonna a {
-  color: white;
-  margin: 10px;
-}
-.colonna a:hover {
-  color: orangered;
-}
-
-
-
-/*responsive*/
-@media (max-width: 767px) {
-  .colonna {
-    width: 50%;
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 574px) {
-  .colonna {
-    width: 100%;
-  }
-
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-end; 
+  padding-right: 2%; 
+} 
+.tasto{ 
+ display: inline-flex; 
+} 
+ 
+.header_items a { 
+  color: white; 
+  margin: 10px; 
+} 
+ 
+a { 
+  text-decoration: none; 
+ 
+} 
+.home_text a { 
+  padding-left: 10px; 
+} 
+ 
+ 
+a:hover { 
+  color: orangered; 
+} 
+ 
+ 
+ 
+ 
+footer{ 
+ 
+  padding: 70px 0; 
+  max-width: 100%; 
+  padding-left: 10%; 
+  background-color: #24262b; 
+   
+} 
+ 
+ 
+ 
+.footer_colonne { 
+  display: flex; 
+  flex-wrap: wrap; 
+   
+} 
+ 
+colonna ul { 
+  list-style: none; 
+} 
+ 
+.colonna h4 { 
+  font-size: 20px; 
+  text-transform: capitalize; 
+  margin-bottom: 35px; 
+  font-weight: 500; 
+  position: relative; 
+} 
+.colonna { 
+  width: 25%; 
+ 
+  color: white; 
+} 
+.colonna a { 
+  color: white; 
+  margin: 10px; 
+} 
+.colonna a:hover { 
+  color: orangered; 
+} 
+ 
+ 
+ 
+/*responsive*/ 
+@media (max-width: 767px) { 
+  .colonna { 
+    width: 50%; 
+    margin-bottom: 30px; 
+  } 
+} 
+@media (max-width: 574px) { 
+  .colonna { 
+    width: 100%; 
+  } 
+ 
 }

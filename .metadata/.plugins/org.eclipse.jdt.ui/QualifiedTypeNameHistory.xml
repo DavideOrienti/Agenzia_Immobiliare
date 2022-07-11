@@ -21,7 +21,6 @@
     <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.repository.AgenteRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.Agente"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
     <fullyQualifiedTypeName name="org.apache.catalina.realm.JNDIRealm.User"/>
@@ -38,7 +37,11 @@
     <fullyQualifiedTypeName name="it.uniroma3.siw.validator.UtenteValidator"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.Ticket"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.service.TicketService"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+=======
+    <fullyQualifiedTypeName name="java.util.List"/>
+>>>>>>> Matteo
 </qualifiedTypeNameHistroy>

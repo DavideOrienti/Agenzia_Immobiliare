@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
  <head th:fragment="headerfiles(title)">
@@ -41,4 +42,49 @@
 </body>
 
 
+=======
+<!DOCTYPE html> 
+<html xmlns:th="http://www.thymeleaf.org"> 
+ <head th:fragment="headerfiles(title)"> 
+ 
+<link th:href="@{/css/my-style.css}" rel="stylesheet" /> 
+<link th:href="@{/css/index.css}" rel="stylesheet" /> 
+<link 
+      rel="stylesheet" 
+      type="text/css" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    /> 
+ 
+ 
+<title>IMMOBILE</title> 
+</head> 
+<body> 
+ 
+  
+  
+ <div class="banner"> 
+ <header th:replace="fragments/base.html :: intestazione"></header> 
+ <div class="content"> 
+ <h1>PRENOTA IL TUO FUTURO</h1> 
+ <p>Vieni a guardare le numerose case a disposizione per scegliere quella perfetta per te</p> 
+  
+ <div class="bottoni"> 
+ <button type ="button"><a th:href="@{/immobile}">Immobile</a></button> 
+ <button type ="button"><a th:href="@{/utente}">Profilo</a></button> 
+ </div> 
+  
+  
+ </div> 
+  
+ </div> 
+ 
+  
+ 
+  
+<footer th:replace="fragments/base.html :: footer"></footer> 
+ 
+</body> 
+ 
+ 
+>>>>>>> Matteo
 </html>

@@ -8,24 +8,29 @@
 <link rel="stylesheet" type="text/css"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
-<title th:text="${title}">Buffet</title>
+<title th:text="${title}">Tickets</title>
 </head>
 <body>
 
-	<header th:replace="fragments/base.html :: intestazione"></header>
-	<div>
+	    <header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="titolo">
+		<h1> i tuoi Tickets </h1>
+	</div>
 
-   
-
+   		<div class="elenco">
+			<div class="tickets">
+			
+			<div th:each="immobile : ${immobili}">				
+			<div class="punto">
+	
+			<div class="nome">
+			<a href="ticket.html"
+			th:href= "@{'/ticket' + '/' + ${ticket.id}}" th:text="|${ticket.immobile.indirizzo} ${ticket.immobile.civico} |" >></a>
+			</div>
 
 		<div>
 			
-			
-			<h2 th:text="${ticket.Progressivo}">Rossi</h2>
-			<h2 th:text="${ticket.utente.nome}">Rossi</h2>
-			<h2 th:text="${ticket.immobile.indirizzo}">Rossi</h2>
-			<h2 th:text="${ticket.dataPrenotazione}">Rossi</h2>
-
+	
 		</div>
 
 
