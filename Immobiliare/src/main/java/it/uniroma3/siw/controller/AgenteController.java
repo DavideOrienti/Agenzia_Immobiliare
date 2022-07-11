@@ -48,6 +48,7 @@ public class AgenteController {
 			as.saveAgente(agente);
 			//model.addAttribute("chef", model);
 			model.addAttribute("agenti", this.as.FindAll());
+			model.addAttribute("agente",agente);
 
 
 			return "agenti.html";  // se il problema non ha trovato errori torna alla pagina iniziale
@@ -67,7 +68,10 @@ public class AgenteController {
 	@GetMapping("/agente")
 	public String getAgenti(Model model) {
 		model.addAttribute("agenti", this.as.FindAll());
+		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		
+		Credentials credentials = as.getCredentialsService().getCredentials(userDetails.getUsername());
+		model.addAttribute("credentials", credentials);
 		return "agenti.html";
 
 	}

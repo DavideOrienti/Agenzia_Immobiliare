@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
- <head th:fragment="headerfiles(title)">
+<head th:fragment="headerfiles(title)">
 
-  <link th:href="@{/css/my-style.css}" rel="stylesheet" />
-    <link th:href="@{/css/immobile.css}" rel="stylesheet" />
+<link th:href="@{/css/my-style.css}" rel="stylesheet" />
+<link th:href="@{/css/chef.css}" rel="stylesheet" />
 
-<title th:text="${title}">Immobile</title>
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+<title th:text="${title}">Buffet</title>
 </head>
 <body>
 
-<header th:replace="fragments/base.html :: intestazione"></header>
+	<header th:replace="fragments/base.html :: intestazione"></header>
 	<div>
-	
-	
-		
-		
-		
-		 <div class="immobile">
-			<h1 th:text="${immobile.descrizione}">immobile</h1>
+
+
+
+
+		<div>
+			<div class="immagine">
+			
 			</div>
-			<div class="indirizzo">
-			<div class="text"><h2>Indirizzo :</h2> </div>
-			<div class="nomeChef">
-			<h2 th:if= "${immobile.indirizzo}" th:text="${immobile.civico}" th:text="${immobile.interno}">via cilicia 7</h2>
-			</div></div>
-			
-			<div class="descrizione">
-			Descrizione:    <span th:text="${immobile.descrizione}">strada molto trafficata</span>
-			</div>
-			
-			
-			
-		
-		
-		
-		
-		
-		
+			<h1 th:text="${immobile.descrizione}">Paolo</h1>
+			<h1 th:text="${immobile.indirizzo}">Rossi</h1>
+			<h2 th:text="${immobile.civico}">Rossi</h2>
+			<h2 th:text="${immobile.interno}">Rossi</h2>
+
+		</div>
+
+
+
+
 	</div>
-	  <footer th:replace="fragments/base.html :: footer"></footer>
+	
+	 
+	 <div>
+			<div class="tasto">
+						<a th:href="@{/prenota}">Prenota il tuo Appuntamento</a>
+					</div>
+		</div>
+
+
+
+
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

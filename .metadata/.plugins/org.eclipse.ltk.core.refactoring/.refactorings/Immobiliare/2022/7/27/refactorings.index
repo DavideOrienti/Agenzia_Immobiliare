@@ -17,3 +17,8 @@
 1657291964301	Rename resource 'Immobile.css'
 1657292195352	Move 'index.css' to 'css'
 1657292423190	Move 'agenti.html' to 'templates'
+1657458809080	Rename resource 'RegisterUser.html'
+1657459154927	Move 'immobili.html' to 'templates'
+1657459996051	Rename resource 'registratioSuccessful.html'
+1657461561678	Move 'immobileForm.html' to 'templates'
+1657466685775	Move 'conferma.html' to 'templates'

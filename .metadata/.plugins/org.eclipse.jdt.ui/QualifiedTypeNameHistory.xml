@@ -18,7 +18,6 @@
     <fullyQualifiedTypeName name="org.springframework.validation.Validator"/>
     <fullyQualifiedTypeName name="org.springframework.validation.Errors"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.AgenziaImmobiliare"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.model.Immobile"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.Ticket"/>
     <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.repository.AgenteRepository"/>
@@ -35,4 +34,7 @@
     <fullyQualifiedTypeName name="it.uniroma3.siw.validator.AgenziaImmobiliareValidator"/>
     <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
     <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.model.Immobile"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.service.AgenteService"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 </qualifiedTypeNameHistroy>

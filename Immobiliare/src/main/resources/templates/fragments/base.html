@@ -29,16 +29,18 @@
 				<ul>
 
 					<div class="tasto">
-						<a th:href="@{/immobili}">immobili</a>
+						<a th:href="@{/immobile}">immobili</a>
 					</div>
 
 					<div class="tasto">
-						<a th:href="@{/agenti}">agenti</a>
+						<a th:href="@{/agente}">agenti</a>
+					</div>
+					<div class="tasto">
+						<a th:href="@{/utente}">utente</a>
 					</div>
 
 					<div class="tasto">
-						<a th:href="@{/login}" th:if="!${login}">Accedi</a> <a
-							th:href="@{/logout}" th:if="${login}">Logout</a>
+						 <a	th:href="@{/logout}">Logout</a>
 
 					</div>
 				</ul>
@@ -49,7 +51,7 @@
 	
 	<div class="foto" th:fragment="foto">
 	<div class = "Nome">
-	<h1>abBUFFETi</h1></div>
+	<h1>Agenzia Immobiliare M&D</h1></div>
 	
 	 </div>
 

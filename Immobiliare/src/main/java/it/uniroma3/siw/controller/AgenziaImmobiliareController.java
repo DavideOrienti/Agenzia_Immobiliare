@@ -15,11 +15,11 @@ public class AgenziaImmobiliareController {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	//quando non mi arriva nulla oppure caso base vado in index pagina iniziale
-	@GetMapping("/")
-    public String defaultMapping(Model model) {
-        return "index.html";
-    }
-	
+//	//quando non mi arriva nulla oppure caso base vado in index pagina iniziale
+//	@GetMapping( {"/","/index"})
+//    public String defaultMapping(Model model) {
+//        return "loginForm.html";
+//    }
+//	
 	
 }

@@ -62,19 +62,25 @@ public class TicketController {
 //
 
  @RequestMapping(value="/conferma", method = RequestMethod.POST)
- public String newBiglietto( Model model,@ModelAttribute("biglietto") Ticket biglietto, BindingResult bindingResult,HttpSession httpSession) {
+ public String newBiglietto( Model model,@ModelAttribute("biglietto") Ticket biglietto, BindingResult bindingResult,
+		 HttpSession httpSession,@ModelAttribute("immobile") Immobile immobile) {
      this.tv.validate(biglietto, bindingResult);
+     this.immobileCorrente=immobile;
 
      if (!bindingResult.hasErrors()) {
-         biglietto.setImmobile((Immobile)httpSession.getAttribute("immobile"));
-         biglietto.setUtente((Utente)httpSession.getAttribute("utente"));
+    	 biglietto.setImmobile(immobile);
+    	
+    	 
+        // biglietto.setImmobile((Immobile)httpSession.getAttribute("immobile"));
+         //biglietto.setUtente((Utente)httpSession.getAttribute("utente"));
          Utente utente=(Utente)httpSession.getAttribute("utente");
-         
+         biglietto.setUtente(utente); 
             ts.saveTicket(biglietto);
             return "tickets.html";
              }
-     	this.immobileCorrente=(Immobile)httpSession.getAttribute("immobile");
-		model.addAttribute("ticket", new Ticket());
+     	
+       model.addAttribute("ticket", new Ticket());
+    // model.addAttribute("ticket", biglietto);
 		model.addAttribute("immobile",immobileCorrente);
 		model.addAttribute("agente",this.immobileCorrente.getAgente());
 
