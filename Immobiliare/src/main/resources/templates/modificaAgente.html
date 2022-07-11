@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link th:href="@{/css/my-style.css}" rel="stylesheet" />
+<link th:href="@{/css/agenteForm.css}" rel="stylesheet" />
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+<title>ModificaImmobile</title>
+</head>
+<body>
+
+<header th:replace="fragments/base.html :: intestazione"></header>
+
+<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2>ModificaAgente</h2>
+
+<!--  	<form th:action="@{/chef/{id}}"-->
+	<form th:action="@{'/agente/' + ${agente.id}}"
+	method="POST" th:object="${agente}">
+
+		<div th:if="${#fields.hasGlobalErrors()}">
+		 <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore</p>
+		</div>
+
+
+		<div>
+			Nome : <input type="text" class="field" th:field="*{nome}" />
+			<div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
+			
+		</div>
+		
+		<div>
+			cognome : <input type="text" class="field"th:field="*{cognome}" />
+			<div th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></div>
+			
+		</div>
+		
+		
+		<div>
+			eta :<input type="text" class="field" th:field="*{eta}" />
+			<div th:if="${#fields.hasErrors('eta')}" th:errors="*{eta}"></div>
+		</div>
+		<div>
+			n.telefono :<input type="text" class="field" th:field="*{numeroTelefono}" />
+			<div th:if="${#fields.hasErrors('numeroTelefono')}" th:errors="*{numeroTelefono}"></div>
+		</div>
+		
+		
+		<!-- >div>
+					Immagine <input type="text" class="field" name="immagine" th:field="*{immagine}" required />
+					<span th:if="${#fields.hasErrors('immagine')}" th:errors="*{immagine}"></span>
+				</div-->
+				
+		<div>
+			<button type="submit" class="btn"> Conferma </button></div>
+
+	</form>
+			</div>
+		</div>
+		</div>
+	
+		<footer th:replace="fragments/base.html :: footer"></footer>
+	</body>
+	</html>

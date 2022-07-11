@@ -1,116 +1,116 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="headerfiles(title)">
-<meta charset="UTF-8" />
-
-
-<link
-	href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap"
-	rel="stylesheet">
-
-<link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-
-<link th:href="@{/css/my-style.css}" rel="stylesheet" />
-
-
-</head>
-<body>
-	<header class="font" th:fragment="intestazione">
-		<div class="header">
-			<div class="header_logo">
-				<a th:href="@{/}">Home</a>
-				
-			</div>
-			<div class="header_items">
-				<ul>
-
-					<div class="tasto">
-						<a th:href="@{/immobile}">immobili</a>
-					</div>
-
-					<div class="tasto">
-						<a th:href="@{/agente}">agenti</a>
-					</div>
-					<div class="tasto">
-						<a th:href="@{/utente}">utente</a>
-					</div>
-
-					<div class="tasto">
-						 <a	th:href="@{/logout}">Logout</a>
-
-					</div>
-				</ul>
-
-			</div>
-		</div>
-	</header>
-	
-	<div class="foto" th:fragment="foto">
-	<div class = "Nome">
-	<h1>Agenzia Immobiliare M&D</h1></div>
-	
-	 </div>
-
-
-	<footer th:fragment="footer">
-
-		<div class="footer_conteiner">
-			<div class="footer_colonne">
-				<div class="colonna">
-					<h4>Info</h4>
-					<ul>
-						<li><a href="">Sito
-								Personale</a></li>
-						<li><a
-							href="">Sito
-								per Prenotazione Eventi</a></li>
-						<li><a
-							href="">Foto Eventi
-								</a></li>
-					
-					</ul>
-				</div>
-				<div class="colonna">
-					<h4>Aperti</h4>
-					<ul>
-						<li><span>Lunedi-Venerdi 12:00 - 22:00</span></li>
-						<li><span>Sabato 12:00 - 01:00</span></li>
-						<li><span>Domenica 18:00 - 23:00</span></li>
-						
-					</ul>
-				</div>
-				<div class="colonna">
-					<h4>Contatti</h4>
-					<ul>
-						<li><span>Numero Telefono :0657333218</span></li>
-						<li><span>Email: abBuffeti@gmail.comit</span></li>
-						<li><span>Numero Fax : 0657333211</span></li>
-						<li><span>Via Cilicia, 7</span></li>
-					</ul>
-				</div>
-
-				<div class="colonna">
-					<h4>follow us</h4>
-					<div class="social-links">
-						<a href=""><i
-							class="fab fa-facebook-f"></i></a> <a href=""><i
-							class="fab fa-twitter"></i></a> <a href=""><i
-							class="fab fa-instagram"></i></a> <a
-							href=""><i
-							class="fab fa-linkedin-in"></i></a>
-					</div>
-				</div>
-		
-			</div>
-				     
-		</div>
-	
-		
-	</footer>
-	
-</body>
+<!DOCTYPE html> 
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head th:fragment="headerfiles(title)"> 
+<meta charset="UTF-8" /> 
+ 
+ 
+<link 
+ href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" 
+ rel="stylesheet"> 
+ 
+<link 
+      rel="stylesheet" 
+      type="text/css" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    /> 
+ 
+<link th:href="@{/css/my-style.css}" rel="stylesheet" /> 
+ 
+ 
+</head> 
+<body> 
+ <header class="font" th:fragment="intestazione"> 
+  <div class="header"> 
+   <div class="header_logo"> 
+    <a th:href="@{/}">HOME</a> 
+     
+   </div> 
+   <div class="header_items"> 
+    <ul> 
+ 
+     <div class="tasto"> 
+      <a th:href="@{/immobile}">IMMOBILI</a> 
+     </div> 
+ 
+     <div class="tasto"> 
+      <a th:href="@{/agente}">AGENTI</a> 
+     </div> 
+     <div class="tasto"> 
+      <a th:href="@{/utente}">PROFILO</a> 
+     </div> 
+ 
+     <div class="tasto"> 
+       <a th:href="@{/logout}">LOGOUT</a> 
+ 
+     </div> 
+    </ul> 
+ 
+   </div> 
+  </div> 
+ </header> 
+  
+ <div class="foto" th:fragment="foto"> 
+ <div class = "Nome"> 
+ <h1>Agenzia Immobiliare M&D</h1></div> 
+  
+  </div> 
+ 
+ 
+ <footer th:fragment="footer"> 
+ 
+  <div class="footer_conteiner"> 
+   <div class="footer_colonne"> 
+    <div class="colonna"> 
+     <h4>Info</h4> 
+     <ul> 
+      <li><a href="">Sito 
+        Personale</a></li> 
+      <li><a 
+       href="">Sito 
+        per Prenotazione Eventi</a></li> 
+      <li><a 
+       href="">Foto Eventi 
+        </a></li> 
+      
+     </ul> 
+    </div> 
+    <div class="colonna"> 
+     <h4>Aperti</h4> 
+     <ul> 
+      <li><span>Lunedi-Venerdi 12:00 - 22:00</span></li> 
+      <li><span>Sabato 12:00 - 01:00</span></li> 
+      <li><span>Domenica 18:00 - 23:00</span></li> 
+       
+     </ul> 
+    </div> 
+    <div class="colonna"> 
+     <h4>Contatti</h4> 
+     <ul> 
+      <li><span>Numero Telefono :0657333218</span></li> 
+      <li><span>Email: abBuffeti@gmail.comit</span></li> 
+      <li><span>Numero Fax : 0657333211</span></li> 
+      <li><span>Via Cilicia, 7</span></li> 
+     </ul> 
+    </div> 
+ 
+    <div class="colonna"> 
+     <h4>follow us</h4> 
+     <div class="social-links"> 
+      <a href=""><i 
+       class="fab fa-facebook-f"></i></a> <a href=""><i 
+       class="fab fa-twitter"></i></a> <a href=""><i 
+       class="fab fa-instagram"></i></a> <a 
+       href=""><i 
+       class="fab fa-linkedin-in"></i></a> 
+     </div> 
+    </div> 
+   
+   </div> 
+          
+  </div> 
+  
+   
+ </footer> 
+  
+</body> 
 </html>

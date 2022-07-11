@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles(title)">
+
+<link th:href="@{/css/my-style.css}" rel="stylesheet" />
+<link th:href="@{/css/agente.css}" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+<title th:text="${title}">Tickets</title>
+</head>
+<body>
+
+	    <header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="titolo">
+		<h1> i tuoi Tickets </h1>
+	</div>
+
+   		<div class="elenco">
+			<div class="tickets">
+			
+			<div th:each="immobile : ${immobili}">				
+			<div class="punto">
+	
+			<div class="nome">
+			<a href="ticket.html"
+			th:href= "@{'/ticket' + '/' + ${ticket.id}}" th:text="|${ticket.immobile.indirizzo} ${ticket.immobile.civico} |" >></a>
+			</div>
+
+		<div>
+			
+	
+		</div>
+
+
+
+
+	</div>
+
+
+
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

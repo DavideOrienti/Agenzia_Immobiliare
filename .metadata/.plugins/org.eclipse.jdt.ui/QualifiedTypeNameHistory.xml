@@ -18,16 +18,12 @@
     <fullyQualifiedTypeName name="org.springframework.validation.Validator"/>
     <fullyQualifiedTypeName name="org.springframework.validation.Errors"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.AgenziaImmobiliare"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.model.Ticket"/>
     <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.repository.AgenteRepository"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.Agente"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
     <fullyQualifiedTypeName name="org.apache.catalina.realm.JNDIRealm.User"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.service.CredentialsService"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.validator.UtenteValidator"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.validator.CredentialsValidator"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.Utente"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.service.AgenziaImmobiliareService"/>
@@ -37,4 +33,9 @@
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.Immobile"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.service.AgenteService"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.service.CredentialsService"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.validator.UtenteValidator"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.model.Ticket"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.service.TicketService"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

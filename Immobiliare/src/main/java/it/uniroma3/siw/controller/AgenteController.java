@@ -50,6 +50,10 @@ public class AgenteController {
 			model.addAttribute("agenti", this.as.FindAll());
 			model.addAttribute("agente",agente);
 
+			UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			Credentials credentials = as.getCredentialsService().getCredentials(userDetails.getUsername());
+			model.addAttribute("credentials", credentials);
+			
 
 			return "agenti.html";  // se il problema non ha trovato errori torna alla pagina iniziale
 		}
@@ -91,40 +95,33 @@ public class AgenteController {
 	
 
 
-//
-//	@GetMapping("/modifica/{id}")
-//	public String modificaChef(Model model,@PathVariable("id") Long id) {
-//		Chef c= cs.FindById(id);
-//		model.addAttribute("chef", c);
-//		if(AuthenticationController.loggato) {
-//			if(AuthenticationController.admin) {	
-//				model.addAttribute("credentials",AuthenticationController.admin);
-//
-//			}}
-//
-//
-//		return "ModificaChef.html";
-//	}
-//
-//	@PostMapping("/chef/{id}")
-//	public String modificaChef(@ModelAttribute("chef") Chef chef, Model model,BindingResult bindingResult,
-//			@PathVariable("id") Long Id) {
-//
-//		//Chef c = cs.FindById(Id);
-//		chef.setId(Id);
-//		cs.salvaChef(chef);
-//		//cs.cancellaChef(c);
-//
-//		//chef.setId(Id);
-//		chef=cs.FindById(Id);
-//		model.addAttribute("chef", chef);
-//		if(AuthenticationController.loggato) {
-//			if(AuthenticationController.admin) {	
-//				model.addAttribute("credentials",AuthenticationController.admin);
-//
-//			}}
-//
-//		return "chef.html";
-//	}
+
+	@GetMapping("/modificaAgente/{id}")
+	public String modificaAgente(Model model,@PathVariable("id") Long id) {
+		Agente a = as.FindById(id);
+		model.addAttribute("agente", a);
+
+
+		return "modificaAgente.html";
+	}
+
+	@PostMapping("/agente/{id}")
+	public String modificaAgente(@ModelAttribute("agente") Agente agente, Model model,BindingResult bindingResult,
+			@PathVariable("id") Long Id) {
+
+		//Chef c = cs.FindById(Id);
+		agente.setId(Id);
+		as.saveAgente(agente);
+		//cs.cancellaChef(c);
+
+		//chef.setId(Id);
+		agente=as.FindById(Id);
+		model.addAttribute("agente", agente);
+		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Credentials credentials = this.as.getCredentialsService().getCredentials(userDetails.getUsername());
+        model.addAttribute("credentials", credentials);
+
+		return "agente.html";
+	}
 
 }

@@ -24,8 +24,13 @@ public class TicketService {
 //	@Autowired
 //	private PiattoService ps;
 //	
+	
+
+	
 	@Transactional // ci pensa Springboot ad apreire e chiude la transazione
+	
 	public void saveTicket (Ticket ticket) {
+	ticket.setDataPrenotazione(ticket.getDataPrenotazione().replace('T',' '));	
 		tr.save(ticket);		
 		
 		
@@ -75,6 +80,9 @@ public class TicketService {
 	public void rimuovi(Ticket ticket) {
 		tr.delete(ticket);
 	}
+	
+
+	
 	
 	
 	

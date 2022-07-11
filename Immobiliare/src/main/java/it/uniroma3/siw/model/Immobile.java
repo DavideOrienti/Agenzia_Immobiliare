@@ -43,6 +43,8 @@ public class Immobile {
 	
 	
 	
+	
+	
 //	@OneToMany
 //	private List<Ticket> prenotazioni;
 	

@@ -19,21 +19,16 @@ public class Ticket {
 	private Long id ;
 	
 	
-	
-	
-	//@Min(0)
 	private int Progressivo;
 	
-	private LocalDate dataPrenotazione;
-	
-	
+	private String dataPrenotazione;
 	
 	
 //	
 //	@ManyToOne(cascade = CascadeType.PERSIST)
 //	private Agente agente;
 	
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne//(cascade = CascadeType.PERSIST)
 	private Immobile immobile;
 	
 	@ManyToOne(cascade = CascadeType.PERSIST)
@@ -61,11 +56,11 @@ public class Ticket {
 		Progressivo = progressivo;
 	}
 
-	public LocalDate getDataPrenotazione() {
+	public String getDataPrenotazione() {
 		return dataPrenotazione;
 	}
 
-	public void setDataPrenotazione(LocalDate dataPrenotazione) {
+	public void setDataPrenotazione(String dataPrenotazione) {
 		this.dataPrenotazione = dataPrenotazione;
 	}
 

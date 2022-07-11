@@ -19,6 +19,8 @@ public class ImmobileService {
 	@Autowired
     CredentialsService credentialsService;
 	
+	private Immobile immobileCorrente;
+	
 //	@Autowired
 //	private ChefService cs;
 	
@@ -71,6 +73,14 @@ public class ImmobileService {
 	public CredentialsService getCredentialsService() {
 		return credentialsService;
     }
+
+	public Immobile getImmobileCorrente() {
+		return immobileCorrente;
+	}
+
+	public void setImmobileCorrente(Immobile immobileCorrente) {
+		this.immobileCorrente = immobileCorrente;
+	}
 	
 	
 }

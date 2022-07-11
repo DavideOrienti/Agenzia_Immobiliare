@@ -33,6 +33,14 @@
 
 
 	</div>
+				<div th:if="${credentials.role=='ADMIN'}">
+		<form th:action="@{'/modificaImmobile'+'/' + ${immobile.id}}" method="GET">
+			<button class="sub-button" type="submit">
+				<h1>MODIFICA</h1>
+			</button>
+		</form>
+	</div>
+	
 	
 	 
 	 <div>
