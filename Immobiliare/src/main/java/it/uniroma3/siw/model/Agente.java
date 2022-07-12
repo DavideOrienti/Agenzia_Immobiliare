@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -28,7 +29,7 @@ public class Agente {
 	private String cognome;
 
 	@NotNull
-	//@Min(18)
+	@Min(18)
 	//@Max(100)
 	private int eta;
 	

@@ -12,28 +12,36 @@
 <body>
 <div class="banner">
 	<header th:replace="fragments/base.html :: intestazione"></header>
-	<div class="blocco">
+	<div >
 	
 	
 
 
-		<div class="sinistro">
+		<div class="blocco">
 			
-			<h1 th:text="${utente.nome}">Paolo</h1>
-			<h1 th:text="${utente.cognome}">Paolo</h1>
+			<div class="nome">
+			<h1>NOME:</h1>
+			<h1 th:text="${utente.nome}">Paolo</h1></div>
 			
+			<div class="cognome">
+			<h1>COGNOME:</h1>
+			<h1 th:text="${utente.cognome}">Paolo</h1></div>
+			</div>
+		<div class="ticket">
+		<h2>I Tuoi Tickets</h2>
 			
 		<div class="elenco">
-				<a class= "punto" th:each="ticket : ${tickets}" href="ticket.html"
-					th:href="@{'/ticket' + '/' + ${ticket.id}}" th:text="|${ticket.immobile.indirizzo}${ticket.Progressivo} |">Buffetefefef
+				<a class= "bottone" th:each="ticket : ${tickets}" href="ticket.html"
+					th:href="@{'/ticket' + '/' + ${ticket.id}}" th:text="|${ticket.immobile.indirizzo}  ${ticket.Progressivo} |">Buffetefefef
 				</a>
 			</div> 
+			</div>
 			
-			<div class="bottone">
+		<!--  	<div class="bottone">
 						<a th:href="@{/prenota}">Prenota il tuo Appuntamento</a>
 					</div>
-
-		</div>
+-->
+		
 
 
 	</div></div>

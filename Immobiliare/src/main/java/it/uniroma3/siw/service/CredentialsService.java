@@ -1,5 +1,6 @@
 package it.uniroma3.siw.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -9,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.model.Credentials;
+import it.uniroma3.siw.model.Ticket;
 import it.uniroma3.siw.repository.CredentialRepository;
 
 @Service
@@ -37,6 +39,12 @@ public class CredentialsService {
         credentials.setRole(Credentials.DEFAULT_ROLE);
         credentials.setPassword(this.passwordEncoder.encode(credentials.getPassword()));
         return this.credentialsRepository.save(credentials);
+    }
+    
+	
+	@Transactional
+    public boolean alreadyExist(Credentials credential) {
+		return  credentialsRepository.existsByUsername(credential.getUsername());
     }
 
 }

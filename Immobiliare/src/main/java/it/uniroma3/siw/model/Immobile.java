@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -17,16 +18,18 @@ public class Immobile {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id ;
 	
-	@NotNull
+	
 	private String descrizione;
 	
-	@Column(nullable = false)
+	@NotBlank
 	private String indirizzo;
-	@Column(nullable = false)
-	//@Min(1)
+	
+	@NotNull
+	@Min(1)
 	private int civico;
 	
-	@Column(nullable = false)
+	@NotNull
+	@Min(1)
 	private int  interno;
 	
 	@ManyToOne
@@ -38,10 +41,10 @@ public class Immobile {
 	private boolean stato;
 	
 	@NotNull
-	@Min(0)
+	@Min(1)
 	private int numeroPostiDisponibili;
 	
-	@NotNull
+	@NotBlank
 	private String immagine;
 	
 	

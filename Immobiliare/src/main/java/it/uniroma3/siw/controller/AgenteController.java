@@ -41,7 +41,7 @@ public class AgenteController {
 
 	//bilding result gestische i casi di errore
 	//model Attriubute associa cio che c edentro al modello con l oggetto persona
-	public String addAgente(@Valid @ModelAttribute("agenti")Agente agente,BindingResult br,Model model) {
+	public String addAgente(@Valid @ModelAttribute("agente")Agente agente,BindingResult br,Model model) {
 		av.validate(agente, br); /* "aggiunge il caso di errore a br quindi nel if oltre a controllare i classici 
 		                              errori contro anche che non ci siano duplicati*/
 		if(!br.hasErrors())	{
@@ -57,7 +57,7 @@ public class AgenteController {
 
 			return "agenti.html";  // se il problema non ha trovato errori torna alla pagina iniziale
 		}
-		model.addAttribute("agente", new Agente());
+		//model.addAttribute("agente", new Agente());
 
 		return "agenteForm.html";
 	}

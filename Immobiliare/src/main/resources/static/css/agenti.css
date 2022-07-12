@@ -7,7 +7,7 @@
 	
 }
 
-h1{
+.titolo h1{
 	font-size: 50px;
 	text-align: center;
 	color: white;
@@ -74,9 +74,15 @@ display: flex;
 }
 
 
-#--------------Bottone--------------
+
+
+.blocco{
+	display: flex;
+	justify-content: center;
+}
+
 .bottone{ 
- width: 200px; 
+ width: 350px; 
  padding: 15px 0; 
  text-align: center; 
  margin:20px 10px; 
@@ -88,6 +94,8 @@ display: flex;
  color: white; 
  position: relative; 
  overflow: hidden; 
+ margin-bottom: 150px;
+
  
   
 } 
@@ -101,17 +109,17 @@ a:hover {
  
  
 .bottone:hover{ 
-box-shadow: inset 352px 0 0 0 #009688; 
+box-shadow: inset 350px 0 0 0 #009688; 
 } 
  
-.bottone:hover span{ 
- width: 100%; 
-} 
 
  
 .bottone a{ 
  color: white; 
 } 
+
+
+
 
 
 

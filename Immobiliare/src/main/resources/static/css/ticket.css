@@ -1,6 +1,5 @@
-
 body {
-	background-color: #d4d4d4;
+	background-color: #bcbcbc;
 }
 
 .blocco{
@@ -9,16 +8,17 @@ body {
 	align-items: center;
 }
 
-.nome{
+.indirizzo{
 	display: inline-flex;
 }
-.cognome{
+.civico{
 	display: inline-flex;
 }
-.eta{
+
+.interno{
 	display: inline-flex;
 }
- 
+
 .bottone{ 
  width: 200px; 
  padding: 15px 0; 
@@ -45,7 +45,7 @@ a:hover {
  
  
 .bottone:hover{ 
-box-shadow: inset 352px 0 0 0 #009688; 
+box-shadow: inset 350px 0 0 0 #009688; 
 } 
  
 .bottone:hover span{ 
@@ -56,9 +56,3 @@ box-shadow: inset 352px 0 0 0 #009688;
 .bottone a{ 
  color: white; 
 } 
-
-footer{
-	margin-top:200px;
-}
-
-

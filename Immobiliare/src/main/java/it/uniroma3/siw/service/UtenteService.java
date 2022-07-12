@@ -57,7 +57,7 @@ public class UtenteService {
 	@Transactional
 	//Creato per verificare l esistenza di un duplicato
 	public boolean alreadyExist(Utente utente) {
-		return ur.existsByNome(utente.getNome());
+		return ur.existsByNomeAndCognome(utente.getNome(),utente.getCognome());
 	}
 	
 //	public ChefService getChefService() {

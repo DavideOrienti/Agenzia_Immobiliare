@@ -29,7 +29,7 @@ public class UtenteValidator implements Validator {
 			 logger.debug("confermato: valori non nulli");
 		 if(utenteService.alreadyExist((Utente)obj)) {
 			 logger.debug("e' un duplicato");
-	            errors.reject("Immobile.duplicato");
+	            errors.reject("utente.duplicato");
 	        }
 		}
 	}

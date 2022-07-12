@@ -29,7 +29,7 @@ public class AgenteValidator implements Validator {
 			 logger.debug("confermato: valori non nulli");
 		 if(agenteservice.alreadyExist((Agente)obj)) {
 			 logger.debug("e' un duplicato");
-	            errors.reject("Immobile.duplicato");
+	            errors.reject("agente.duplicato");
 	        }
 		}
 	}

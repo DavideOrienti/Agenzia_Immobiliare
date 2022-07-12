@@ -1,14 +1,22 @@
-h1{
-	text-align: center;
-	margin-top: 10px;
-}
-h2{
-	text-align:  center;
-	margin-top: 10px;
-}
 
 body {
 	background-color: #d4d4d4;
+}
+
+.blocco{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.nome{
+	display: inline-flex;
+}
+.cognome{
+	display: inline-flex;
+}
+.eta{
+	display: inline-flex;
 }
  
 .bottone{ 

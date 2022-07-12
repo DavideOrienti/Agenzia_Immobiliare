@@ -1,25 +1,28 @@
 body {
-	background-color: #d4d4d4;
+	background-color: #bcbcbc;
+}
+
+.blocco{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.nome{
+	display: inline-flex;
+}
+.cognome{
+	display: inline-flex;
+}
+
+.ticket{
+	margin-top:10%;
+	margin-left: 10%;
 }
  
-.bottone{ 
- width: 200px; 
- padding: 15px 0; 
- text-align: center; 
- margin:20px 10px; 
- border-radius: 25px; 
- font-weight: bold; 
- border:2px solid #009688; 
- background: transparent; 
- cursor: pointer; 
- color: white; 
- position: relative; 
- overflow: hidden; 
- 
-  
-} 
-a{ 
- color:white; 
+
+.bottone a{ 
+ color:black;; 
 } 
  
 a:hover { 

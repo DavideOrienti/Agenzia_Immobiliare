@@ -78,10 +78,15 @@ margin-top:10px;
   cursor: pointer; 
   margin:30px; 
 }
+.blocco{
+	display: flex;
+	
+	justify-content: center;
+	 margin-right: 300px;
+}
 
-#---------------Bottone
 .bottone{ 
- width: 200px; 
+ width: 350px; 
  padding: 15px 0; 
  text-align: center; 
  margin:20px 10px; 
@@ -93,33 +98,28 @@ margin-top:10px;
  color: white; 
  position: relative; 
  overflow: hidden; 
+ margin-bottom: 150px;
+
+
+
  
   
 } 
-
-
-bottone a{ 
- color:white; 
+.bottone a{ 
+ color:black; 
 } 
  
-
+.bottone a:hover { 
+  color: Black; 
+} 
  
  
 .bottone:hover{ 
-box-shadow: inset 352px 0 0 0 #009688; 
+box-shadow: inset 350px 0 0 0 #009688; 
 } 
  
-.bottone:hover span{ 
- width: 100%; 
-} 
 
  
-.bottone a{ 
- color: white; 
-} 
-
-
-
 
 
 

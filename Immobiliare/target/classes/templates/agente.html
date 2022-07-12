@@ -18,11 +18,17 @@
 
 
 
-		<div>
+		<div class="blocco">
 
-			<h1 th:text="${agente.nome}">Paolo</h1>
-			<h1 th:text="${agente.cognome}">Rossi</h1>
-			<h2 th:text="${agente.eta}">Rossi</h2>
+            <div class = "nome">
+            <h1>NOME:</h1>
+			<h1 th:text="${agente.nome}">Paolo</h1></div>
+			<div class = "cognome">
+			<h1>COGNOME:</h1>
+			<h1 th:text="${agente.cognome}">Rossi</h1></div>
+			<div class = "eta">
+			<h2>ETA:</h2>
+			<h2 th:text="${agente.eta}">Rossi</h2></div>
 			
 
 		</div>

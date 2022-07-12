@@ -2,4 +2,10 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.Immobile"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.service.TicketService"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Min"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.model.Credentials"/>
+    <fullyQualifiedTypeName name="it.uniroma3.siw.validator.CredentialsValidator"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="javax.validation.Valid"/>
 </qualifiedTypeNameHistroy>

@@ -58,7 +58,7 @@ public class AgenteService {
 	@Transactional
 	//Creato per verificare l esistenza di un duplicato
 	public boolean alreadyExist(Agente agente) {
-		return ar.existsByNome(agente.getNome());
+		return ar.existsByNomeAndCognome(agente.getNome(),agente.getCognome());
 	}
 	
 //	public ChefService getChefService() {

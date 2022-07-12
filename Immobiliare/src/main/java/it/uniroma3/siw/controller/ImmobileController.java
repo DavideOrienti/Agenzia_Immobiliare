@@ -57,7 +57,7 @@ public class ImmobileController {
 
 	//bilding result gestische i casi di errore
 	//model Attriubute associa cio che c edentro al modello con l oggetto persona
-	public String addImmobile(@Valid @ModelAttribute("immobili")Immobile immobile,BindingResult br,Model model) {
+	public String addImmobile(@Valid @ModelAttribute("immobile")Immobile immobile,BindingResult br,Model model) {
 		iv.validate(immobile, br); /* "aggiunge il caso di errore a br quindi nel if oltre a controllare i classici 
 		                              errori contro anche che non ci siano duplicati*/
 		if(!br.hasErrors())	{
@@ -69,9 +69,8 @@ public class ImmobileController {
 			return "index";  // se il problema non ha trovato errori torna alla pagina iniziale
 		}
 		else {
-         	model.addAttribute("immobile", new Immobile());
-		
-			model.addAttribute("agenti",as.FindAll());
+			//model.addAttribute("immobile", immobile);
+		    model.addAttribute("agenti",as.FindAll());
 
 		return "immobileForm.html";}
 	}

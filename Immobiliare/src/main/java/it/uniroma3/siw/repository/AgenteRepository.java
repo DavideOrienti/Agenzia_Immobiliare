@@ -6,7 +6,7 @@ import it.uniroma3.siw.model.Agente;
 
 public interface AgenteRepository extends CrudRepository<Agente,Long> {
 	
-	public boolean existsByNome(String nome);
+	public boolean existsByNomeAndCognome(String nome, String cognome);
 	
 	
 
