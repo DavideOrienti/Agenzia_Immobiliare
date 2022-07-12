@@ -21,6 +21,7 @@ public class Ticket {
 	
 	private int Progressivo;
 	
+	
 	private String dataPrenotazione;
 	
 	

@@ -26,9 +26,13 @@ public class TicketValidator implements Validator {
 	public void validate(Object obj, Errors errors) {
 		if (!errors.hasErrors()) {
 			 logger.debug("confermato: valori non nulli");
-		 if(ticketService.alreadyExist((Ticket)obj)) {
-			 logger.debug("e' un duplicato");
-	            errors.reject("Immobile.duplicato");
+//		 if(ticketService.alreadyExist((Ticket)obj)) {
+//			 logger.debug("e' un duplicato");
+//	            errors.reject("Immobile.duplicato");
+//	        }
+		 if(!ticketService.dataOccupata((Ticket)obj)) {
+			 logger.debug("Data gia inserita");
+	            errors.reject("ticket.dataOccupata");
 	        }
 		}
 	}

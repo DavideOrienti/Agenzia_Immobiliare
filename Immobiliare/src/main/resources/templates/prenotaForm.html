@@ -25,6 +25,10 @@
 				<form th:action="@{/conferma}" method="POST" th:object="${ticket}">
 
 
+<div th:if="${#fields.hasGlobalErrors()}">
+		 <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore</p>
+		</div>
+
 					<div th:text="${immobile.indirizzo}">
 					
 					

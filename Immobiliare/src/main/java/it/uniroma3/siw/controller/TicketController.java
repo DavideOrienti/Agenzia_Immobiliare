@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -97,7 +98,7 @@ public class TicketController {
 ////    }
 
 	@RequestMapping(value="/conferma", method = RequestMethod.POST)
-	public String newBiglietto( Model model,@ModelAttribute("biglietto") Ticket biglietto, BindingResult bindingResult,
+	public String newBiglietto(@Valid Model model,@ModelAttribute("biglietto") Ticket biglietto, BindingResult bindingResult,
 			HttpSession httpSession) {
 		this.tv.validate(biglietto, bindingResult);
 		this.immobileCorrente=is.getImmobileCorrente();
@@ -120,7 +121,7 @@ public class TicketController {
 		model.addAttribute("immobile",immobileCorrente);
 		biglietto.setUtente(utente);
 		
-		biglietto.setProgressivo((ts.FindByUtente(utente).size()));
+		biglietto.setProgressivo((ts.FindByUtenteAndImmobile(immobileCorrente,utente).size()));
 
 
 		biglietto.setDataPrenotazione((biglietto.getDataPrenotazione()));
@@ -151,12 +152,17 @@ public class TicketController {
 //            }
             Utente u = t.getUtente();
             //ho l'utente devo vedere se così facendo sul DB resta in memoria il ticket
-            
+            Immobile immobile=ts.FindById(idTicket).getImmobile();
+            immobile.setStato(false);
             //devo capire se così facendo tolgo anche dall'utente il ticket
             ts.rimuovi(t);
+            
+            
             model.addAttribute("utente", u);
+            model.addAttribute("tickets",ts.FindByUtente(u));
 
 
+            
             
             return "utente.html";
     }

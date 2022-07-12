@@ -101,8 +101,10 @@ public class ImmobileController {
 	@GetMapping("/immobile/{id}")
 	public String getImmobile(@PathVariable("id") Long id, Model model) {
 		this.immobileCorrente = this.is.FindById(id);
+		
 		int postiRimasti = this.immobileCorrente.getNumeroPostiDisponibili()-is.getTicketervice().FindByImmobile(immobileCorrente).size();
 		if(postiRimasti==0) {immobileCorrente.setStato(true);}
+	
 		model.addAttribute("stato",this.immobileCorrente.isStato());
 	
 		model.addAttribute("postiRimasti",postiRimasti);

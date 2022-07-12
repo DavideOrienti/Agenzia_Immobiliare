@@ -47,6 +47,12 @@ public class TicketService {
 		return tr.findByImmobile(i);
 	}
 	
+	
+	@Transactional
+	public List<Ticket> FindByUtenteAndImmobile(Immobile i,Utente u) {
+		return tr.findByUtenteAndImmobile(u,i);
+	}
+	
 	@Transactional
 	public Ticket FindById(Long id) {
 	
@@ -81,6 +87,19 @@ public class TicketService {
 //		return cs;
 //	}
 //	
+	
+	public boolean dataOccupata(Ticket ticket) {
+		List<Ticket> t = this.tr.findByUtenteAndImmobile(ticket.getUtente(), ticket.getImmobile());
+		boolean disponibile=true;
+		for(int i=0;i<t.size();i++) {
+			
+			if(t.get(i).getDataPrenotazione().equals(ticket.getDataPrenotazione())) {
+				return false;
+			}
+			
+		}
+		return disponibile;
+	}
 	
 	@Transactional
 	public void rimuovi(Ticket ticket) {
