@@ -1,47 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.lang.Nullable"/>
-    <fullyQualifiedTypeName name="javax.persistence.Id"/>
-    <fullyQualifiedTypeName name="antlr.collections.List"/>
-    <fullyQualifiedTypeName name="javax.persistence.Column"/>
-    <fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
-    <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
-    <fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
-    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
-    <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
-    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
-    <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
-    <fullyQualifiedTypeName name="javax.validation.Validator"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.validator.ImmobileValidator"/>
-    <fullyQualifiedTypeName name="org.springframework.validation.Validator"/>
-    <fullyQualifiedTypeName name="org.springframework.validation.Errors"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.model.AgenziaImmobiliare"/>
-    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.repository.AgenteRepository"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.model.Agente"/>
-    <fullyQualifiedTypeName name="java.util.Optional"/>
-    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
-    <fullyQualifiedTypeName name="org.apache.catalina.realm.JNDIRealm.User"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.validator.CredentialsValidator"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.model.Utente"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.service.AgenziaImmobiliareService"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.validator.AgenziaImmobiliareValidator"/>
-    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
-    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.model.Immobile"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.service.AgenteService"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.service.CredentialsService"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.validator.UtenteValidator"/>
-    <fullyQualifiedTypeName name="it.uniroma3.siw.model.Ticket"/>
     <fullyQualifiedTypeName name="it.uniroma3.siw.service.TicketService"/>
-<<<<<<< HEAD
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-=======
-    <fullyQualifiedTypeName name="java.util.List"/>
->>>>>>> Matteo
 </qualifiedTypeNameHistroy>

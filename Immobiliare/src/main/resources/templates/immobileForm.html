@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <link th:href="@{/css/my-style.css}" rel="stylesheet" />
-<link th:href="@{/css/ingredientiForm.css}" rel="stylesheet" />
+<link th:href="@{/css/immobileForm.css}" rel="stylesheet" />
 <link
       rel="stylesheet"
       type="text/css"
@@ -45,6 +45,14 @@
 			Descrizione:<input type="text" class="field" th:field="*{descrizione}" />
 			<div th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></div>
 		</div>
+		<div>
+			Massimo Posti:<input type="number" class="field" th:field="*{numeroPostiDisponibili}" />
+			<div th:if="${#fields.hasErrors('numeroPostiDisponibili')}" th:errors="*{numeroPostiDisponibili}"></div>
+		</div>
+		<div>
+					Immagine <input type="text" class="field" name="immagine" th:field="*{immagine}" required />
+					<span th:if="${#fields.hasErrors('immagine')}" th:errors="*{immagine}"></span>
+				</div>
 		
 			<div>
 						<select name="agente" roleId="agente" id="agente" th:field="*{agente}"

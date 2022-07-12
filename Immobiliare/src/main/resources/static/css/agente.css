@@ -7,4 +7,50 @@ h2{
 	margin-top: 10px;
 }
 
+body {
+	background-color: #d4d4d4;
+}
+ 
+.bottone{ 
+ width: 200px; 
+ padding: 15px 0; 
+ text-align: center; 
+ margin:20px 10px; 
+ border-radius: 25px; 
+ font-weight: bold; 
+ border:2px solid #009688; 
+ background: transparent; 
+ cursor: pointer; 
+ color: white; 
+ position: relative; 
+ overflow: hidden; 
+ 
+  
+} 
+a{ 
+ color:white; 
+} 
+ 
+a:hover { 
+  color: white; 
+} 
+ 
+ 
+.bottone:hover{ 
+box-shadow: inset 352px 0 0 0 #009688; 
+} 
+ 
+.bottone:hover span{ 
+ width: 100%; 
+} 
+
+ 
+.bottone a{ 
+ color: white; 
+} 
+
+footer{
+	margin-top:200px;
+}
+
 

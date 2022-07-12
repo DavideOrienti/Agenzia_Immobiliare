@@ -20,6 +20,7 @@ import it.uniroma3.siw.model.Immobile;
 import it.uniroma3.siw.model.Ticket;
 import it.uniroma3.siw.service.AgenteService;
 import it.uniroma3.siw.service.ImmobileService;
+import it.uniroma3.siw.service.TicketService;
 import it.uniroma3.siw.validator.ImmobileValidator;
 
 
@@ -35,8 +36,8 @@ public class ImmobileController {
 	@Autowired
 	private  AgenteService as;
 //	
-//	@Autowired
-//	private TicketService ts;
+	@Autowired
+	private TicketService ts;
 //	@Autowired
 //	private TicketValidator tv;
 	
@@ -68,7 +69,9 @@ public class ImmobileController {
 			return "index";  // se il problema non ha trovato errori torna alla pagina iniziale
 		}
 		else {
-		model.addAttribute("immobile", new Immobile());
+         	model.addAttribute("immobile", new Immobile());
+		
+			model.addAttribute("agenti",as.FindAll());
 
 		return "immobileForm.html";}
 	}
@@ -89,6 +92,8 @@ public class ImmobileController {
 	
 		Credentials credentials = is.getCredentialsService().getCredentials(userDetails.getUsername());
 		model.addAttribute("credentials", credentials);
+		
+		
 		return "immobili.html";
 
 	}
@@ -97,7 +102,11 @@ public class ImmobileController {
 	@GetMapping("/immobile/{id}")
 	public String getImmobile(@PathVariable("id") Long id, Model model) {
 		this.immobileCorrente = this.is.FindById(id);
-		
+		int postiRimasti = this.immobileCorrente.getNumeroPostiDisponibili()-is.getTicketervice().FindByImmobile(immobileCorrente).size();
+		if(postiRimasti==0) {immobileCorrente.setStato(true);}
+		model.addAttribute("stato",this.immobileCorrente.isStato());
+	
+		model.addAttribute("postiRimasti",postiRimasti);
 		model.addAttribute("immobile",immobileCorrente);
 		//per il tasto modifica per dare la visibilità 
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -125,6 +134,7 @@ public class ImmobileController {
 	@GetMapping("/modificaImmobile/{id}")
     public String modificaImmobile(Model model,@PathVariable("id") Long id) {
 		Immobile immobile = is.FindById(id);
+		
         model.addAttribute("immobile", immobile);
 		model.addAttribute("agenti",as.FindAll());
         
@@ -151,6 +161,11 @@ public class ImmobileController {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Credentials credentials = this.as.getCredentialsService().getCredentials(userDetails.getUsername());
         model.addAttribute("credentials", credentials);
+        
+        int postiRimasti = this.immobileCorrente.getNumeroPostiDisponibili()-is.getTicketervice().FindByImmobile(immobileCorrente).size();
+		if(postiRimasti==0) {immobileCorrente.setStato(true);}
+		model.addAttribute("stato",this.immobileCorrente.isStato());
+		
         return "immobile.html";
          }
 

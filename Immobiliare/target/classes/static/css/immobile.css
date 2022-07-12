@@ -1,15 +1,77 @@
-body {
- margin :0;
- position :static;
+body { 
  
- color:white;
+ background-color: #d4d4d4;
  	
 }
 
-.descrizione{
+.testo{
 	margin-top :80px;
-		display: flex;
-	margin-left: 50px;
+	display: flex;
+	flex-direction:column;
+	text-align: center;
 
 	}
 	
+	.descrizione{
+	display: inline-flex;
+	}
+	.civico{
+	display: inline-flex;
+	}
+	.interno{
+	display: inline-flex;
+	}
+	.indirizzo{
+	display: inline-flex;
+	}
+	.posti{
+	display: inline-flex;
+	}
+	
+.immagine{
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+ 
+.bottone{ 
+ width: 200px; 
+ padding: 15px 0; 
+ text-align: center; 
+ margin:20px 10px; 
+ border-radius: 25px; 
+ font-weight: bold; 
+ border:2px solid #009688; 
+ background: transparent; 
+ cursor: pointer; 
+ color: white; 
+ position: relative; 
+ overflow: hidden; 
+ 
+  
+} 
+a{ 
+ color:white; 
+} 
+ 
+a:hover { 
+  color: white; 
+} 
+ 
+ 
+.bottone:hover{ 
+box-shadow: inset 350px 0 0 0 #009688; 
+} 
+ 
+.bottone:hover span{ 
+ width: 100%; 
+} 
+
+ 
+.bottone a{ 
+ color: white; 
+} 
+
+footer{
+	margin-top:200px;
+}

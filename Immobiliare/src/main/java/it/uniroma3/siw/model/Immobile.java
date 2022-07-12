@@ -41,6 +41,9 @@ public class Immobile {
 	@Min(0)
 	private int numeroPostiDisponibili;
 	
+	@NotNull
+	private String immagine;
+	
 	
 	
 	
@@ -92,6 +95,7 @@ public class Immobile {
 	public void setStato(boolean stato) {
 		this.stato = stato;
 	}
+	
 
 	public int getNumeroPostiDisponibili() {
 		return numeroPostiDisponibili;
@@ -125,13 +129,15 @@ public class Immobile {
 		this.agente = agente;
 	}
 
-//	public List<Ticket> getPrenotazioni() {
-//		return prenotazioni;
-//	}
-//
-//	public void setPrenotazioni(List<Ticket> prenotazioni) {
-//		this.prenotazioni = prenotazioni;
-//	}
+	public String getImmagine() {
+		return immagine;
+	}
+
+	public void setImmagine(String immagine) {
+		this.immagine = immagine;
+	}
+
+	
 	
 	
 

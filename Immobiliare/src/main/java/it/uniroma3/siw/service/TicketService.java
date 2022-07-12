@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.uniroma3.siw.model.Immobile;
 import it.uniroma3.siw.model.Ticket;
 import it.uniroma3.siw.model.Utente;
 import it.uniroma3.siw.repository.TicketRepository;
@@ -39,6 +40,11 @@ public class TicketService {
 	@Transactional
 	public List<Ticket> FindByUtente(Utente u) {
 		return tr.findByUtente(u);
+	}
+	
+	@Transactional
+	public List<Ticket> FindByImmobile(Immobile i) {
+		return tr.findByImmobile(i);
 	}
 	
 	@Transactional

@@ -18,6 +18,9 @@ public class ImmobileService {
 	
 	@Autowired
     CredentialsService credentialsService;
+
+	@Autowired
+    TicketService ticketService;
 	
 	private Immobile immobileCorrente;
 	
@@ -72,6 +75,10 @@ public class ImmobileService {
 	
 	public CredentialsService getCredentialsService() {
 		return credentialsService;
+    }
+	
+	public TicketService getTicketervice() {
+		return ticketService;
     }
 
 	public Immobile getImmobileCorrente() {

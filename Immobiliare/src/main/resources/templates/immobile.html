@@ -3,7 +3,7 @@
 <head th:fragment="headerfiles(title)">
 
 <link th:href="@{/css/my-style.css}" rel="stylesheet" />
-<link th:href="@{/css/chef.css}" rel="stylesheet" />
+<link th:href="@{/css/immobile.css}" rel="stylesheet" />
 
 <link rel="stylesheet" type="text/css"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
@@ -20,22 +20,39 @@
 
 		<div>
 			<div class="immagine">
-			
+			<img th:src="${immobile.immagine}" height="700" width="auto">
 			</div>
-			<h1 th:text="${immobile.descrizione}">Paolo</h1>
-			<h1 th:text="${immobile.indirizzo}">Rossi</h1>
-			<h2 th:text="${immobile.civico}">Rossi</h2>
-			<h2 th:text="${immobile.interno}">Rossi</h2>
+			<div class="testo">
+			
+			<div class ="indirizzo">
+			<h1>Indirizzo:</h1><h1 th:text="${immobile.indirizzo}">Rossi</h1>
+			</div>
+			<div class ="civico">
+			<h2>Civico:</h2><h2 th:text="${immobile.civico}">Rossi</h2>
+			</div>
+			<div class ="interno">
+			<h2>Interno:</h2><h2 th:text="${immobile.interno}">Rossi</h2>
+			</div>
+			<div class ="posti">
+			<h2>Posti Rimasti:</h2><h2 th:text="${postiRimasti}">Rossi</h2>
+			</div>
+			<div class ="descrizione">
+			<h3>Descrizione:</h3> <h3 th:text="${immobile.descrizione}">Paolo</h3>
+			</div>
+			
 
+		</div>
 		</div>
 
 
 
 
 	</div>
+	
+
 				<div th:if="${credentials.role=='ADMIN'}">
 		<form th:action="@{'/modificaImmobile'+'/' + ${immobile.id}}" method="GET">
-			<button class="sub-button" type="submit">
+			<button class="bottone" type="submit">
 				<h1>MODIFICA</h1>
 			</button>
 		</form>
@@ -43,8 +60,8 @@
 	
 	
 	 
-	 <div>
-			<div class="tasto">
+	 <div th:if="${!stato}">
+			<div class="bottone">
 						<a th:href="@{/prenota}">Prenota il tuo Appuntamento</a>
 					</div>
 		</div>
