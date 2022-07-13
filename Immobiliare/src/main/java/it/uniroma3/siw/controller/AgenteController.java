@@ -46,7 +46,6 @@ public class AgenteController {
 		                              errori contro anche che non ci siano duplicati*/
 		if(!br.hasErrors())	{
 			as.saveAgente(agente);
-			//model.addAttribute("chef", model);
 			model.addAttribute("agenti", this.as.FindAll());
 			model.addAttribute("agente",agente);
 
@@ -57,7 +56,6 @@ public class AgenteController {
 
 			return "agenti.html";  // se il problema non ha trovato errori torna alla pagina iniziale
 		}
-		//model.addAttribute("agente", new Agente());
 
 		return "agenteForm.html";
 	}
@@ -109,12 +107,9 @@ public class AgenteController {
 	public String modificaAgente(@ModelAttribute("agente") Agente agente, Model model,BindingResult bindingResult,
 			@PathVariable("id") Long Id) {
 
-		//Chef c = cs.FindById(Id);
 		agente.setId(Id);
 		as.saveAgente(agente);
-		//cs.cancellaChef(c);
 
-		//chef.setId(Id);
 		agente=as.FindById(Id);
 		model.addAttribute("agente", agente);
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();

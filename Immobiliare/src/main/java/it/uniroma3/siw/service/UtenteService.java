@@ -19,12 +19,7 @@ public class UtenteService {
 	
 	@Autowired
 	private CredentialsService cs;
-//	@Autowired
-//	private ChefService cs;
-	
-//	@Autowired
-//	private PiattoService ps;
-//	
+
 	@Transactional // ci pensa Springboot ad apreire e chiude la transazione
 	public void saveUtente (Utente utente) {
 		ur.save(utente);		
@@ -60,11 +55,7 @@ public class UtenteService {
 		return ur.existsByNomeAndCognome(utente.getNome(),utente.getCognome());
 	}
 	
-//	public ChefService getChefService() {
-//		return cs;
-//	}
-//	
-	
+
 	@Transactional
 	public void rimuovi(Utente utente) {
 		ur.delete(utente);

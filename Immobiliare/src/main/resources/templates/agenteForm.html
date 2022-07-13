@@ -25,30 +25,30 @@
 	<form th:action="@{/admin/agente}" method="post" th:object="${agente}">
 
 		<div th:if="${#fields.hasGlobalErrors()}">
-		 <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore</p>
+		 <p th:each="err : ${#fields.globalErrors()}" th:text="${err}" th:style="'color:red'">errore</p>
 		</div>
 
 
 		<div>
 			Nome:<input type="text" class="field" th:field="*{nome}" />
-			<div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
+			<div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"  th:style="'color:red'"></div>
 			
 		</div>
 		
 		<div>
 			Cognome:<input type="text" class="field"th:field="*{cognome}" />
-			<div th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></div>
+			<div th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"  th:style="'color:red'"></div>
 			
 		</div>
 		
 		<div>
 			Eta:<input type="number" class="field" th:field="*{eta}" />
-			<div th:if="${#fields.hasErrors('eta')}" th:errors="*{eta}"></div>
+			<div th:if="${#fields.hasErrors('eta')}" th:errors="*{eta}"  th:style="'color:red'"></div>
 		</div>
 		
 		<div>
 			N Telefono:<input type="text" class="field"th:field="*{numeroTelefono}" />
-			<div th:if="${#fields.hasErrors('numeroTelefono')}" th:errors="*{numeroTelefono}"></div>
+			<div th:if="${#fields.hasErrors('numeroTelefono')}" th:errors="*{numeroTelefono}" th:style="'color:red'"></div>
 			
 		</div>
 		

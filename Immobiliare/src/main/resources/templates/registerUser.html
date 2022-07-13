@@ -12,13 +12,17 @@
  <title>Register</title>
 <body>
 	
-	<div>
     	<!-- <h4 th:text="#{header.registra}">Registrazione</h4>-->
     	<div class="center">
 		<h1>Register</h1>
-	<form th:action="@{/register}" method="POST" >
+	<form th:action="@{/register}" method="POST" th:object="${credentials}">
 	
     <div>
+    <div th:if="${#fields.hasGlobalErrors()}">
+						<p th:each="err : ${#fields.globalErrors()}" th:text="${err}" th:style="'color:red'"
+						>errore</p>
+					</div>
+    
     
    
     
@@ -27,16 +31,16 @@
          
             
             <span><input type="text" placeholder="username" required
-                       th:field="${credentials.username}"/></span>
-            <span th:if="${#fields.hasErrors('credentials.username')}"
-                th:errors="${credentials.username}" th:style="'color:red'"></span>
+                       th:field="*{username}"/></span>
+            <span th:if="${#fields.hasErrors('username')}"
+                th:errors="*{username}" th:style="'color:red'"></span>
         </div>
         <div class="txt_field">
             <span>Password</span>
             <span><input type="password" placeholder="password" required
-                       th:field="${credentials.password}"/></span>
-            <span th:if="${#fields.hasErrors('credentials.password')}"
-                th:errors="${credentials.password}" th:style="'color:red'"></span>
+                       th:field="*{password}"/></span>
+            <span th:if="${#fields.hasErrors('password')}"
+                th:errors="*{password}" th:style="'color:red'"></span>
         </div>
         <div class="txt_field">
             <span>Nome</span>

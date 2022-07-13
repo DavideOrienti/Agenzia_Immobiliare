@@ -35,11 +35,10 @@ public class ImmobileController {
 	
 	@Autowired
 	private  AgenteService as;
-//	
+	
 	@Autowired
 	private TicketService ts;
-//	@Autowired
-//	private TicketValidator tv;
+
 	
 	//quando non mi arriva nulla oppure caso base vado in index pagina iniziale
 	
@@ -62,14 +61,12 @@ public class ImmobileController {
 		                              errori contro anche che non ci siano duplicati*/
 		if(!br.hasErrors())	{
 			is.saveImmobile(immobile);
-			//model.addAttribute("chef", model);
 			model.addAttribute("immobili", this.is.FindAll());
 
 
 			return "index";  // se il problema non ha trovato errori torna alla pagina iniziale
 		}
 		else {
-			//model.addAttribute("immobile", immobile);
 		    model.addAttribute("agenti",as.FindAll());
 
 		return "immobileForm.html";}
@@ -86,7 +83,7 @@ public class ImmobileController {
 
 	@GetMapping("/immobile")
 	public String getImmobile(Model model) {
-		model.addAttribute("immobili", this.is.FindAll());
+		model.addAttribute("immobili", this.is.FindAllOrdinato());
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 	
 		Credentials credentials = is.getCredentialsService().getCredentials(userDetails.getUsername());
@@ -121,7 +118,7 @@ public class ImmobileController {
 	
 	@GetMapping("/prenota")
 	public String prenota(Model model) {
-		model.addAttribute("ticket", new Ticket());
+		model.addAttribute("biglietto", new Ticket());
 		model.addAttribute("immobile",this.immobileCorrente);
 		model.addAttribute("agente",this.immobileCorrente.getAgente());
 		is.setImmobileCorrente(this.immobileCorrente);
@@ -138,13 +135,6 @@ public class ImmobileController {
 		
         model.addAttribute("immobile", immobile);
 		model.addAttribute("agenti",as.FindAll());
-        
-//        if(AuthenticationController.loggato) {
-//     		if(AuthenticationController.admin) {	
-//     			model.addAttribute("credentials",AuthenticationController.admin);
-//     			
-//     		}}
-
            
         return "modificaImmobile.html";
         }

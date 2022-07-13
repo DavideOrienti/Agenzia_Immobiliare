@@ -50,8 +50,8 @@
 			<div th:if="${#fields.hasErrors('numeroPostiDisponibili')}" th:errors="*{numeroPostiDisponibili}"></div>
 		</div>
 		<div>
-					Immagine <input type="text" class="field" name="immagine" th:field="*{immagine}" required />
-					<span th:if="${#fields.hasErrors('immagine')}" th:errors="*{immagine}"></span>
+					Immagine <input type="text" class="field" name="immagine" th:field="*{immagine}" />
+					<span th:if="${#fields.hasErrors('immagine')}" th:errors="*{immagine}"  th:style="'color:red'"></span>
 				</div>
 		
 			<div>

@@ -20,12 +20,7 @@ public class AgenteService {
 	@Autowired
     private CredentialsService credentialsService;
 	
-//	@Autowired
-//	private ChefService cs;
-	
-//	@Autowired
-//	private PiattoService ps;
-//	
+
 	@Transactional // ci pensa Springboot ad apreire e chiude la transazione
 	public void saveAgente (Agente agente) {
 		ar.save(agente);		
@@ -61,10 +56,6 @@ public class AgenteService {
 		return ar.existsByNomeAndCognome(agente.getNome(),agente.getCognome());
 	}
 	
-//	public ChefService getChefService() {
-//		return cs;
-//	}
-//	
 	
 	@Transactional
 	public void rimuovi(Agente agente) {

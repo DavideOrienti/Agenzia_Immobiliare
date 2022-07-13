@@ -31,9 +31,13 @@
 		<h2>I Tuoi Tickets</h2>
 			
 		<div class="elenco">
-				<a class= "bottone" th:each="ticket : ${tickets}" href="ticket.html"
-					th:href="@{'/ticket' + '/' + ${ticket.id}}" th:text="|${ticket.immobile.indirizzo}  ${ticket.Progressivo} |">Buffetefefef
-				</a>
+		<ul> 
+		<li
+				 class= "bottone" th:each="ticket : ${tickets}">
+					<a th:href="@{'/ticket' + '/' + ${ticket.id}}" th:text="|${ticket.immobile.indirizzo}  ${ticket.Progressivo} |">Buffetefefef
+					</a>
+		</li>
+		</ul>
 			</div> 
 			</div>
 			

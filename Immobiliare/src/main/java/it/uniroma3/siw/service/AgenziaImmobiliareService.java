@@ -17,12 +17,7 @@ public class AgenziaImmobiliareService {
 	@Autowired  // autocarichi
 	private AgenziaImmobiliareRepository aIr;
 	
-//	@Autowired
-//	private ChefService cs;
-	
-//	@Autowired
-//	private PiattoService ps;
-//	
+
 	@Transactional // ci pensa Springboot ad apreire e chiude la transazione
 	public void saveAgenzia (AgenziaImmobiliare agenzia) {
 		aIr.save(agenzia);		
@@ -58,10 +53,7 @@ public class AgenziaImmobiliareService {
 		return aIr.existsByNome(agenzia.getNome());
 	}
 	
-//	public ChefService getChefService() {
-//		return cs;
-//	}
-//	
+
 	
 	@Transactional
 	public void rimuovi(AgenziaImmobiliare agenzia) {

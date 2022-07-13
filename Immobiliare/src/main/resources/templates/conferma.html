@@ -23,21 +23,21 @@
 <h1>Dati Del tuo Biglietto</h1>
 
     <div class="immagine">
-			<img th:src="${ticket.immobile.immagine}" height="700" width="auto">
+			<img th:src="${biglietto.immobile.immagine}" height="700" width="auto">
 			</div>
 			
 			<div class="indirizzo">
 			<h1>INDIRIZZO:</h1>
-			<h1 th:text="${ticket.immobile.indirizzo}">Paolo</h1></div>
+			<h1 th:text="${biglietto.immobile.indirizzo}">Paolo</h1></div>
 			
 			
 			<div class="progressivo">
 			<h2>Progressivo:</h2>
-			<h2 th:text="${ticket.Progressivo}">Rossi</h2></div>
+			<h2 th:text="${biglietto.Progressivo}">Rossi</h2></div>
 			
 			<div class="data">
 			<h2>Data:</h2>
-		<h2 th:text="${ticket.dataPrenotazione}">Rossi</h2>
+		<h2 th:text="${biglietto.dataPrenotazione}">Rossi</h2>
 			
 			</div>
 

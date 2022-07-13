@@ -18,14 +18,7 @@ public class TicketService {
 	
 	@Autowired  // autocarichi
 	private TicketRepository tr;
-	
-//	@Autowired
-//	private ChefService cs;
-	
-//	@Autowired
-//	private PiattoService ps;
-//	
-	
+
 
 	
 	@Transactional // ci pensa Springboot ad apreire e chiude la transazione
@@ -49,7 +42,7 @@ public class TicketService {
 	
 	
 	@Transactional
-	public List<Ticket> FindByUtenteAndImmobile(Immobile i,Utente u) {
+	public List<Ticket> FindByUtenteAndImmobile(Utente u,Immobile i) {
 		return tr.findByUtenteAndImmobile(u,i);
 	}
 	
@@ -77,24 +70,17 @@ public class TicketService {
 	
 	@Transactional
     public boolean alreadyExist(Ticket biglietto) {
-        List<Ticket> ticket = this.tr.findByUtenteAndImmobile(biglietto.getUtente(), biglietto.getImmobile());
-        if (ticket.size() > 0)
-            return true;
-        else 
-            return false;
-    }
-//	public ChefService getChefService() {
-//		return cs;
-//	}
-//	
+		return tr.existsByUtenteAndImmobile(biglietto.getUtente(),biglietto.getImmobile());
+	}
+
 	
 	public boolean dataOccupata(Ticket ticket) {
-		List<Ticket> t = this.tr.findByUtenteAndImmobile(ticket.getUtente(), ticket.getImmobile());
+		List<Ticket> t = this.tr.findByImmobileAndDataPrenotazioneAndUtente(ticket.getImmobile(),ticket.getDataPrenotazione(),ticket.getUtente() );
 		boolean disponibile=true;
 		for(int i=0;i<t.size();i++) {
 			
 			if(t.get(i).getDataPrenotazione().equals(ticket.getDataPrenotazione())) {
-				return false;
+				disponibile=false;
 			}
 			
 		}

@@ -51,7 +51,7 @@ public class CredentialsValidator implements Validator {
 			 logger.debug("confermato: valori non nulli");
         if(credentialsService.alreadyExist((Credentials)obj)) {
 			 logger.debug("e' un duplicato");
-	            errors.reject("credenziali.duplicato");
+	            errors.reject("utente.duplicato");
 	        }
 		}
     }

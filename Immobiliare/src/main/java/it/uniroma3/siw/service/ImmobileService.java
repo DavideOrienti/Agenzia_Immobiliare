@@ -24,12 +24,7 @@ public class ImmobileService {
 	
 	private Immobile immobileCorrente;
 	
-//	@Autowired
-//	private ChefService cs;
-	
-//	@Autowired
-//	private PiattoService ps;
-//	
+
 	@Transactional // ci pensa Springboot ad apreire e chiude la transazione
 	public void saveImmobile (Immobile immobile) {
 		ir.save(immobile);		
@@ -55,6 +50,20 @@ public class ImmobileService {
 		return immobile;
 	}
 	
+	@Transactional
+	public List<Immobile> FindAllOrdinato(){
+		/* attenzine il metodo pr.findAll() non ritorna un alista ma un iteratore quindi
+		 * devo far un modo di copiare ogni valore in un lista che poi faccio ritornare
+		 */
+
+		List<Immobile> immobile = new ArrayList<Immobile>();
+		
+		for(Immobile i: ir.findAllByOrderByIndirizzoAsc()) {
+			immobile.add(i);
+		}
+		return immobile;
+	}
+	
 	
 	
 	@Transactional
@@ -63,10 +72,6 @@ public class ImmobileService {
 		return ir.existsByIndirizzoAndCivicoAndInterno(immobile.getIndirizzo(),immobile.getCivico(),immobile.getInterno());
 	}
 	
-//	public ChefService getChefService() {
-//		return cs;
-//	}
-//	
 	
 	@Transactional
 	public void rimuovi(Immobile immobile) {

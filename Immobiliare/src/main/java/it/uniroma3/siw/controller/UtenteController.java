@@ -29,40 +29,6 @@ public class UtenteController {
 	private UtenteValidator uv;
 	
 	
-//	@PostMapping("/admin/agente")
-//
-//	//bilding result gestische i casi di errore
-//	//model Attriubute associa cio che c edentro al modello con l oggetto persona
-//	public String addAgente(@Valid @ModelAttribute("agenti")Agente agente,BindingResult br,Model model) {
-//		av.validate(agente, br); /* "aggiunge il caso di errore a br quindi nel if oltre a controllare i classici 
-//		                              errori contro anche che non ci siano duplicati*/
-//		if(!br.hasErrors())	{
-//			as.saveAgente(agente);
-//			//model.addAttribute("chef", model);
-//			model.addAttribute("agenti", this.as.FindAll());
-//
-//
-//			return "agenti.html";  // se il problema non ha trovato errori torna alla pagina iniziale
-//		}
-//		model.addAttribute("agente", new Agente());
-//
-//		return "agenteForm.html";
-//	}
-//
-//	@GetMapping("/admin/agenteForm")
-//	public String agenteForm(Model model) {
-//		model.addAttribute("agente", new Agente());
-//		return "agenteForm.html";
-//	}
-
-//
-//	@GetMapping("/agente")
-//	public String getAgenti(Model model) {
-//		model.addAttribute("agenti", this.as.FindAll());
-//		
-//		return "agenti.html";
-//
-//	}
 
 
 	@GetMapping("/utente")
