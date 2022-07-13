@@ -101,6 +101,7 @@ public class TicketController {
 //		biglietto.setProgressivo((ts.FindByUtenteAndImmobile(utente,immobileCorrente).size()));
 			biglietto.setProgressivo((ts.FindByImmobile(immobileCorrente).size()));
 
+
 		biglietto.setDataPrenotazione((biglietto.getDataPrenotazione()));
 
 		ts.saveTicket(biglietto);

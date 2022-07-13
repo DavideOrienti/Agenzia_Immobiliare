@@ -22,11 +22,11 @@
 			<div class="right">
 				<h2>PrenotaForm</h2>
 
-				<form th:action="@{/conferma}" method="POST" th:object="${biglietto}">
+				<form th:action="@{/conferma}" method="POST" th:object="${biglietto}" >
 
 
 <div th:if="${#fields.hasGlobalErrors()}">
-		 <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore</p>
+		 <p th:each="err : ${#fields.globalErrors()}" th:text="${err}"th:style="'color:red'">errore</p>
 		</div>
 
 					<div th:text="${immobile.indirizzo}">

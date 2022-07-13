@@ -83,11 +83,13 @@ public class ImmobileController {
 
 	@GetMapping("/immobile")
 	public String getImmobile(Model model) {
-		model.addAttribute("immobili", this.is.FindAllOrdinato());
+		model.addAttribute("immobili", this.is.FindAll());
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 	
 		Credentials credentials = is.getCredentialsService().getCredentials(userDetails.getUsername());
 		model.addAttribute("credentials", credentials);
+		int intero= this.is.FindAll().size();
+		model.addAttribute("intero",intero);
 		
 		
 		return "immobili.html";
@@ -139,6 +141,8 @@ public class ImmobileController {
         return "modificaImmobile.html";
         }
 
+	
+	
 	@PostMapping("/immobile/{id}")
     public String modificaImmobile(@ModelAttribute("immobile") Immobile immobile, Model model,BindingResult bindingResult,
             @PathVariable("id") Long Id) {
