@@ -9123,3 +9123,63 @@
 2022-07-13 13:39:52,890 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-07-13 13:39:52,890 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-07-13 13:39:52,890 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Agenzia_Immobiliare\Immobiliare\src\test\resources
+2022-07-13 16:22:36,004 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-07-13 16:23:18,764 [Worker-5: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: it.uniroma3.siw:Immobiliare:0.0.1-SNAPSHOT @ C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\pom.xml.
+2022-07-13 16:23:18,760 [Worker-15: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: it.uniroma3.siw:Immobiliare:0.0.1-SNAPSHOT @ C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\pom.xml.
+2022-07-13 16:23:26,370 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:23:26,371 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:23:26,385 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 16:23:26,501 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 41 resources
+2022-07-13 16:23:26,585 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:23:26,585 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:23:26,585 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\src\test\resources
+2022-07-13 16:23:30,850 [Worker-2: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: it.uniroma3.siw:Immobiliare:0.0.1-SNAPSHOT @ C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\pom.xml.
+2022-07-13 16:23:35,292 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:23:35,293 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:23:35,299 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 16:23:35,300 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 16:23:35,308 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:23:35,308 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:23:35,309 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\src\test\resources
+2022-07-13 16:25:21,574 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:25:21,575 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:25:21,587 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 16:25:21,633 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 41 resources
+2022-07-13 16:25:22,192 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:25:22,192 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:25:22,193 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\src\test\resources
+2022-07-13 16:26:24,303 [Worker-22: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:26:24,304 [Worker-22: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:26:24,307 [Worker-22: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 16:26:24,337 [Worker-22: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 16:26:24,343 [Worker-22: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:26:24,344 [Worker-22: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:26:24,344 [Worker-22: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\src\test\resources
+2022-07-13 16:27:35,774 [Worker-23: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:27:35,775 [Worker-23: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:27:35,776 [Worker-23: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 16:27:35,810 [Worker-23: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 16:27:35,816 [Worker-23: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:27:35,816 [Worker-23: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:27:35,817 [Worker-23: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\src\test\resources
+2022-07-13 16:27:58,284 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:27:58,285 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:27:58,285 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 16:27:58,308 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 16:27:58,314 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:27:58,314 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:27:58,314 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\src\test\resources
+2022-07-13 16:53:24,265 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:53:24,269 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:53:24,277 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 16:53:24,361 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 41 resources
+2022-07-13 16:53:24,391 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:53:24,391 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:53:24,391 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\src\test\resources
+2022-07-13 16:53:32,367 [Worker-29: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:53:32,368 [Worker-29: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:53:32,369 [Worker-29: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 16:53:32,371 [Worker-29: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2022-07-13 16:53:32,425 [Worker-29: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 16:53:32,426 [Worker-29: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 16:53:32,426 [Worker-29: Launching Immobiliare - ImmobiliareApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\39366\unity proggetti\Agenzia_Immobiliare\Immobiliare\src\test\resources
