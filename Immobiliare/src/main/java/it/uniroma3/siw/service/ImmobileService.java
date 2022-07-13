@@ -50,20 +50,6 @@ public class ImmobileService {
 		return immobile;
 	}
 	
-	@Transactional
-	public List<Immobile> FindAllOrdinato(){
-		/* attenzine il metodo pr.findAll() non ritorna un alista ma un iteratore quindi
-		 * devo far un modo di copiare ogni valore in un lista che poi faccio ritornare
-		 */
-
-		List<Immobile> immobile = new ArrayList<Immobile>();
-		
-		for(Immobile i: ir.findAllByOrderByIndirizzoAsc()) {
-			immobile.add(i);
-		}
-		return immobile;
-	}
-	
 	
 	
 	@Transactional
