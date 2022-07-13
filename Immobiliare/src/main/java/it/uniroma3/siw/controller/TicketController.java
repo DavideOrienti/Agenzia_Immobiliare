@@ -98,7 +98,8 @@ public class TicketController {
 //		model.addAttribute("immobile",immobileCorrente);
 //		biglietto.setUtente(utente);
 		
-		biglietto.setProgressivo((ts.FindByUtenteAndImmobile(utente,immobileCorrente).size()));
+//		biglietto.setProgressivo((ts.FindByUtenteAndImmobile(utente,immobileCorrente).size()));
+			biglietto.setProgressivo((ts.FindByImmobile(immobileCorrente).size()));
 
 
 		biglietto.setDataPrenotazione((biglietto.getDataPrenotazione()));
