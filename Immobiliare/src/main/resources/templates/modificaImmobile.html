@@ -48,6 +48,10 @@
 			interno:<input type="text" class="field" th:field="*{interno}" />
 			<div th:if="${#fields.hasErrors('interno')}" th:errors="*{interno}"></div>
 		</div>
+		<div>
+			Massimo Posti:<input type="number" class="field" th:field="*{numeroPostiDisponibili}" />
+			<div th:if="${#fields.hasErrors('numeroPostiDisponibili')}" th:errors="*{numeroPostiDisponibili}"></div>
+		</div>
 			<div>
 			Descrizione:<input type="text" class="field" th:field="*{descrizione}" />
 			<div th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></div>
